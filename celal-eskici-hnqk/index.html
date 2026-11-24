@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Celal Eskici · Berber</title>
+<meta name="description" content="Celal Eskici berber: hizmetler, randevu ve iletişim.">
+<meta name="theme-color" content="#14213d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+<!--
+  Fotoğraflar Wikimedia Commons'tan, serbest lisanslı (örnek görsel):
+  foto/1.jpg  Barber cutting hair with comb. Back view of man in barber shop.jpg — Nenad Stojkovic, CC BY 2.0
+  foto/2.jpg  BarberShop.jpg — Gilangpnp, CC BY-SA 4.0
+-->
+<style>
+  :root {
+    --lacivert: #14213d;
+    --lacivert-2: #1d2d52;
+    --kirmizi: #c8102e;
+    --kirmizi-koyu: #9e0c24;
+    --beyaz: #ffffff;
+    --kirli: #eef1f6;
+    --metin: #16203a;
+    --metin-2: #56617a;
+    --egri: cubic-bezier(.16, 1, .3, 1);
+    --direk: repeating-linear-gradient(-45deg, var(--kirmizi) 0 14px, var(--beyaz) 14px 28px, #2453a6 28px 42px, var(--beyaz) 42px 56px);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--kirli);
+    color: var(--metin);
+    font-family: "Barlow", -apple-system, system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--kirmizi); color: #fff; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--kirmizi); outline-offset: 3px; }
+  img { display: block; max-width: 100%; }
+  .kap { width: min(1160px, 100% - 32px); margin-inline: auto; }
+  .etiket { font-family: "Barlow Condensed", sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: .14em; font-size: .9rem; }
+
+  /* ---------- Berber direği şeridi ---------- */
+  .serit { height: 12px; background: var(--direk); background-size: 79.2px 79.2px; animation: don 2.4s linear infinite; }
+  @keyframes don { to { background-position: 79.2px 0; } }
+
+  /* ---------- Üst ---------- */
+  .ust { background: var(--lacivert); color: #fff; overflow: hidden; }
+  @media (max-width: 879px) { .cerceve { width: calc(100% - 14px); justify-self: start; } .cerceve::before { inset: 12px -12px -12px 12px; } }
+  .ust-ic { display: grid; gap: 40px; padding-block: 56px 72px; }
+  @media (min-width: 880px) { .ust-ic { grid-template-columns: 1fr 1fr; align-items: center; padding-block: 80px 96px; } }
+  h1 {
+    font-family: "Abril Fatface", Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(3.6rem, 12vw, 7.4rem);
+    line-height: .92;
+    margin: 14px 0 22px;
+    letter-spacing: -.01em;
+  }
+  h1 span { display: block; color: #ff8a9a; }
+  .ust p { margin: 0 0 30px; max-width: 38ch; color: #c9d2e6; font-size: 1.12rem; }
+  .eylemler { display: flex; flex-wrap: wrap; gap: 12px; }
+
+  /* Butonlar: üzerine gelince berber direği döner */
+  .btn {
+    position: relative;
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    min-height: 54px; padding: 0 26px;
+    font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: 1.15rem;
+    letter-spacing: .06em; text-transform: uppercase; text-decoration: none;
+    border-radius: 4px;
+    overflow: hidden; isolation: isolate;
+    transition: transform .3s var(--egri), color .3s;
+  }
+  .btn::before {
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background: var(--direk); background-size: 79.2px 79.2px;
+    opacity: 0; transition: opacity .3s;
+    animation: don 1.2s linear infinite paused;
+  }
+  .btn:hover::before { opacity: 1; animation-play-state: running; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn span { padding: 4px 10px; border-radius: 3px; transition: background-color .3s, color .3s; }
+  .btn:hover span { background: var(--lacivert); color: #fff; }
+  .btn svg { width: 20px; height: 20px; }
+  .btn-kirmizi { background: var(--kirmizi); color: #fff; }
+  .btn-beyaz { background: #fff; color: var(--lacivert); }
+
+  .cerceve { position: relative; justify-self: center; width: min(100%, 520px); }
+  .cerceve::before {
+    content: ""; position: absolute; inset: 18px -18px -18px 18px;
+    background: var(--direk); background-size: 79.2px 79.2px;
+    border-radius: 6px;
+  }
+  .cerceve img {
+    position: relative; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 6px;
+    transition: transform .6s var(--egri);
+  }
+  .cerceve:hover img { transform: translate(-8px, -8px) rotate(-1deg); }
+
+  /* ---------- Hizmetler ---------- */
+  section { padding-block: 96px; }
+  h2 {
+    font-family: "Abril Fatface", Georgia, serif; font-weight: 400;
+    font-size: clamp(2.4rem, 7vw, 4rem); line-height: 1; margin: 10px 0 40px; color: var(--lacivert);
+  }
+  .hizmetler { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--lacivert); }
+  .hizmetler li { border-bottom: 2px solid var(--lacivert); }
+  .hizmetler a {
+    display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 4px 16px;
+    padding: 22px 12px;
+    text-decoration: none;
+    background: linear-gradient(var(--lacivert), var(--lacivert)) 0 0 / 0 100% no-repeat;
+    transition: background-size .5s var(--egri), color .35s;
+  }
+  .hizmetler b { font-family: "Barlow Condensed", sans-serif; font-weight: 700; font-size: clamp(1.6rem, 4vw, 2.2rem); text-transform: uppercase; letter-spacing: .02em; line-height: 1.1; }
+  .hizmetler small { grid-column: 1; color: var(--metin-2); font-size: 1rem; transition: color .35s; }
+  .hizmetler .ok {
+    grid-row: span 2; width: 48px; height: 48px; border-radius: 50%;
+    display: grid; place-items: center;
+    border: 2px solid currentColor;
+    transition: transform .5s var(--egri), background-color .35s, border-color .35s;
+  }
+  .hizmetler .ok svg { width: 22px; height: 22px; }
+  .hizmetler a:hover { background-size: 100% 100%; color: #fff; }
+  .hizmetler a:hover small { color: #c9d2e6; }
+  .hizmetler a:hover .ok { transform: rotate(-45deg); background: var(--kirmizi); border-color: var(--kirmizi); }
+  .ornek { margin: 26px 0 0; color: var(--metin-2); font-size: .92rem; }
+
+  /* ---------- Dükkân ---------- */
+  .dukkan { background: var(--lacivert); color: #fff; }
+  .dukkan h2 { color: #fff; }
+  .galeri { display: grid; gap: 16px; }
+  .galeri img { max-height: 560px; }
+  .galeri figure { margin: 0; overflow: hidden; border-radius: 6px; position: relative; }
+  .galeri img { width: 100%; height: 100%; min-height: 280px; object-fit: cover; transition: transform .9s var(--egri), filter .5s; filter: grayscale(.35); }
+  .galeri figure:hover img { transform: scale(1.07); filter: none; }
+  .galeri figure::after {
+    content: ""; position: absolute; inset: 0;
+    box-shadow: inset 0 0 0 0 var(--kirmizi);
+    transition: box-shadow .4s var(--egri);
+  }
+  .galeri figure:hover::after { box-shadow: inset 0 0 0 6px var(--kirmizi); }
+
+  /* ---------- Randevu ---------- */
+  .randevu-ic { display: grid; gap: 40px; }
+  @media (min-width: 880px) { .randevu-ic { grid-template-columns: 1.1fr 1fr; } }
+  .bilgi { display: grid; gap: 20px; align-content: start; }
+  .bilgi div { padding: 18px 20px; background: #fff; border-radius: 6px; }
+  .bilgi .etiket { color: var(--kirmizi); display: block; margin-bottom: 4px; }
+  .bilgi a, .bilgi p { margin: 0; font-size: 1.2rem; font-weight: 500; text-decoration: none; }
+  .bilgi a:hover { color: var(--kirmizi); }
+  .bos { color: var(--metin-2); font-style: italic; font-size: 1rem !important; }
+
+  footer { background: var(--lacivert); color: #9fabc6; font-size: .85rem; padding: 36px 0 120px; }
+  footer p { margin: 0 0 8px; }
+  footer a { color: #c9d2e6; }
+  @media (min-width: 880px) { footer { padding-bottom: 36px; } }
+
+  .alt-cubuk { position: fixed; inset: auto 12px 12px; z-index: 10; display: grid; grid-template-columns: 1.4fr 1fr; gap: 8px; }
+  .alt-cubuk .btn { box-shadow: 0 10px 30px -8px rgb(0 0 0 / .45); }
+  @media (min-width: 880px) { .alt-cubuk { display: none; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before { animation: none !important; transition: none !important; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<div class="serit" aria-hidden="true"></div>
+<header class="ust">
+  <div class="kap ust-ic">
+    <div>
+      <h1>Celal <span>Eskici</span></h1>
+      <p>Kesim, sakal, ense temizliği. Sıra beklemeyin; WhatsApp'tan saatinizi ayırın, gelin oturun.</p>
+      <div class="eylemler">
+        <a class="btn btn-kirmizi" href="https://wa.me/905432302533?text=Merhaba%2C%20randevu%20almak%20istiyorum.">
+          <span>Randevu al</span>
+        </a>
+        <a class="btn btn-beyaz" href="tel:+905432302533"><span>0543 230 25 33</span></a>
+      </div>
+    </div>
+    <div class="cerceve">
+      <img src="foto/1.jpg" alt="Berber koltuğunda saç kesimi, arkadan görünüm" fetchpriority="high">
+    </div>
+  </div>
+</header>
+
+<main>
+  <section aria-labelledby="hizmet-baslik">
+    <div class="kap">
+      <h2 id="hizmet-baslik">Koltukta neler var</h2>
+      <ul class="hizmetler">
+        <li><a href="https://wa.me/905432302533?text=Merhaba%2C%20sa%C3%A7%20kesimi%20i%C3%A7in%20randevu%20almak%20istiyorum."><b>Saç kesimi</b><small>Makine, makas ya da ikisi birden</small><span class="ok" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+        <li><a href="https://wa.me/905432302533?text=Merhaba%2C%20sakal%20t%C4%B1ra%C5%9F%C4%B1%20i%C3%A7in%20randevu%20almak%20istiyorum."><b>Sakal tıraşı</b><small>Sıcak havlu ve ustura ile</small><span class="ok" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+        <li><a href="https://wa.me/905432302533?text=Merhaba%2C%20sa%C3%A7%20ve%20sakal%20i%C3%A7in%20randevu%20almak%20istiyorum."><b>Saç ve sakal</b><small>İkisi bir arada</small><span class="ok" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+        <li><a href="https://wa.me/905432302533?text=Merhaba%2C%20%C3%A7ocuk%20t%C4%B1ra%C5%9F%C4%B1%20i%C3%A7in%20randevu%20almak%20istiyorum."><b>Çocuk tıraşı</b><small>Küçük beyler için</small><span class="ok" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+      </ul>
+      <p class="ornek">Örnek hizmet listesi ve örnek fotoğraflardır; kendi hizmetleriniz, fiyatlarınız ve dükkânınızın fotoğraflarıyla güncellenir. Bir hizmete tıklamak WhatsApp'ta randevu mesajı açar.</p>
+    </div>
+  </section>
+
+  <section class="dukkan" aria-labelledby="dukkan-baslik">
+    <div class="kap">
+      <h2 id="dukkan-baslik">Dükkândan</h2>
+      <div class="galeri">
+        <figure><img src="foto/2.jpg" alt="Berber müşterisinin saçını kesiyor" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="randevu-baslik">
+    <div class="kap randevu-ic">
+      <div>
+        <h2 id="randevu-baslik">Saatinizi ayırın</h2>
+        <p style="margin:-16px 0 28px;color:var(--metin-2);max-width:38ch">Gelmeden önce bir mesaj atın, koltuğunuz hazır olsun.</p>
+        <div class="eylemler">
+          <a class="btn btn-kirmizi" href="https://wa.me/905432302533?text=Merhaba%2C%20randevu%20almak%20istiyorum."><span>WhatsApp'tan randevu</span></a>
+        </div>
+      </div>
+      <div class="bilgi">
+        <div><span class="etiket">Telefon</span><a href="tel:+905432302533">0543 230 25 33</a></div>
+        <div><span class="etiket">Adres</span><p class="bos">Adresiniz buraya eklenecek · <a href="https://www.google.com/maps/search/?api=1&amp;query=Celal%20Eskici%20berber" target="_blank" rel="noopener" style="font-style:normal;font-size:1rem">haritada ara</a></p></div>
+        <div><span class="etiket">Çalışma saatleri</span><p class="bos">Saatleriniz buraya eklenecek</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="kap">
+    <p>Bu sayfa Celal Eskici için hazırlanmış bir tasarım önizlemesidir.</p>
+    <p>Hazırlayan: Evren Arif Kaya · Evolveatech · 0553 708 67 54</p>
+    <p>Örnek fotoğraflar Wikimedia Commons'tan:
+      <a href="https://commons.wikimedia.org/wiki/File:Barber_cutting_hair_with_comb._Back_view_of_man_in_barber_shop.jpg">Nenad Stojkovic</a> (CC BY 2.0),
+      <a href="https://commons.wikimedia.org/wiki/File:BarberShop.jpg">Gilangpnp</a> (CC BY-SA 4.0).</p>
+  </div>
+</footer>
+<div class="serit" aria-hidden="true"></div>
+
+<nav class="alt-cubuk" aria-label="Hızlı iletişim">
+  <a class="btn btn-kirmizi" href="https://wa.me/905432302533?text=Merhaba%2C%20randevu%20almak%20istiyorum."><span>Randevu al</span></a>
+  <a class="btn btn-beyaz" href="tel:+905432302533"><span>Ara</span></a>
+</nav>
+
+</body>
+</html>
