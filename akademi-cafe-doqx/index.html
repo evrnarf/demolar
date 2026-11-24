@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Akademi Cafe</title>
+<meta name="description" content="Akademi Cafe: kahve, menü ve iletişim.">
+<meta name="theme-color" content="#1b2a6b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Caveat:wght@600&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<!--
+  Fotoğraflar Wikimedia Commons'tan, serbest lisanslı (örnek görsel):
+  foto/1.jpg  Turkish coffee Turk kahvesi.jpg — Cromptonenator1, CC BY-SA 4.0
+  foto/2.jpg  A person holds a cup of cappuccino featuring intricate latte art… — Shixart1985, CC BY 2.0
+  foto/3.jpg  Espresso coffee and Caffee latte and wooden table in a cafe.jpg — Shixart1985, CC BY 2.0
+  foto/4.jpg  Turkish coffee in Istanbul.jpg — Tema, CC BY-SA 3.0
+-->
+<style>
+  :root {
+    --sayfa: #fbfcff;
+    --kare: rgb(27 42 107 / .07);
+    --murekkep: #1b2a6b;
+    --murekkep-2: #33449a;
+    --fosfor: #ffe14d;
+    --fosfor-pembe: #ff9ec7;
+    --metin: #1d2340;
+    --metin-2: #535a7a;
+    --egri: cubic-bezier(.16, 1, .3, 1);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    color: var(--metin);
+    font-family: "Figtree", -apple-system, system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    background:
+      linear-gradient(var(--kare) 1px, transparent 1px) 0 0 / 100% 28px,
+      linear-gradient(90deg, var(--kare) 1px, transparent 1px) 0 0 / 28px 100%,
+      var(--sayfa);
+  }
+  ::selection { background: var(--fosfor); color: var(--murekkep); }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--murekkep-2); outline-offset: 3px; border-radius: 6px; }
+  img { display: block; max-width: 100%; }
+  .kap { width: min(1120px, 100% - 32px); margin-inline: auto; }
+  .el { font-family: "Caveat", cursive; font-weight: 600; color: var(--murekkep-2); }
+
+  /* Fosforlu kalem: üzerine gelince çizilir */
+  .fosfor {
+    background: linear-gradient(100deg, transparent 0 1%, var(--fosfor) 2% 97%, transparent 99%) 0 85% / 0 .55em no-repeat;
+    transition: background-size .6s var(--egri);
+    padding-inline: .08em;
+  }
+  .fosfor.hep, :hover > .fosfor, a:hover .fosfor, a:focus-visible .fosfor { background-size: 100% .55em; }
+
+  /* ---------- Giriş ---------- */
+  .giris { padding-block: 72px 88px; }
+  .giris-ic { display: grid; gap: 48px; align-items: center; }
+  @media (min-width: 880px) { .giris-ic { grid-template-columns: 1.15fr .85fr; } }
+  h1 {
+    font-family: "Instrument Serif", Georgia, serif; font-weight: 400;
+    font-size: clamp(3.8rem, 13vw, 8rem); line-height: .9; letter-spacing: -.02em;
+    margin: 0 0 22px; color: var(--murekkep);
+  }
+  .giris p { margin: 0 0 30px; max-width: 38ch; font-size: 1.15rem; color: var(--metin-2); }
+  .eylemler { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    min-height: 54px; padding: 0 24px;
+    border: 2px solid var(--murekkep);
+    border-radius: 999px;
+    font-weight: 700; text-decoration: none;
+    box-shadow: 0 6px 14px -6px rgb(27 42 107 / .55);
+    transition: transform .25s var(--egri), box-shadow .25s var(--egri), background-color .25s;
+  }
+  .btn:hover { transform: translateY(-3px) rotate(-1.5deg); box-shadow: 0 14px 24px -10px rgb(27 42 107 / .6); }
+  .btn:active { transform: translateY(1px); box-shadow: 0 2px 6px -2px rgb(27 42 107 / .5); }
+  .btn svg { width: 20px; height: 20px; }
+  .btn-dolu { background: var(--fosfor); color: var(--murekkep); }
+  .btn-dolu:hover { background: #fff07a; }
+  .btn-bos { background: #fff; color: var(--murekkep); }
+  .btn-bos:hover { background: #ffe3f0; }
+
+  /* İğnelenmiş fotoğraf */
+  .pano { position: relative; justify-self: center; width: min(100%, 440px); }
+  .polaroid {
+    margin: 0;
+    background: #fff;
+    padding: 14px 14px 56px;
+    box-shadow: 0 2px 4px rgb(27 42 107 / .12), 0 18px 40px -12px rgb(27 42 107 / .35);
+    transform: rotate(3deg);
+    transition: transform .6s var(--egri), box-shadow .6s var(--egri);
+    position: relative;
+  }
+  .polaroid img { aspect-ratio: 1; object-fit: cover; width: 100%; }
+  .polaroid figcaption { position: absolute; left: 0; right: 0; bottom: 12px; text-align: center; font-size: 1.6rem; }
+  .polaroid::before {
+    content: ""; position: absolute; top: -12px; left: 50%; width: 110px; height: 30px; translate: -50% 0;
+    background: rgb(255 225 77 / .75); transform: rotate(-4deg);
+  }
+  .polaroid:hover { transform: rotate(-1deg) scale(1.03); box-shadow: 0 4px 8px rgb(27 42 107 / .14), 0 30px 60px -16px rgb(27 42 107 / .45); }
+  .pano .not {
+    position: absolute; left: -10px; bottom: -26px;
+    background: var(--fosfor-pembe); padding: 10px 16px 12px; font-size: 1.45rem; line-height: 1.1;
+    transform: rotate(-6deg); box-shadow: 0 8px 20px -8px rgb(27 42 107 / .4);
+    transition: transform .5s var(--egri);
+  }
+  .pano:hover .not { transform: rotate(2deg) translateY(-6px); }
+
+  /* ---------- Menü ---------- */
+  section { padding-block: 88px; }
+  h2 {
+    font-family: "Instrument Serif", Georgia, serif; font-weight: 400;
+    font-size: clamp(2.6rem, 7vw, 4.2rem); line-height: 1; margin: 0 0 10px; color: var(--murekkep);
+  }
+  .alt { margin: 0 0 44px; color: var(--metin-2); }
+  .defter { display: grid; gap: 40px 64px; }
+  @media (min-width: 820px) { .defter { grid-template-columns: 1fr 1fr; } }
+  .defter h3 { margin: 0 0 8px; font-size: 1.9rem; }
+  .defter ul { list-style: none; margin: 0; padding: 0; }
+  .defter li {
+    display: flex; justify-content: space-between; gap: 16px; align-items: baseline;
+    padding: 12px 0; border-bottom: 1px solid rgb(27 42 107 / .18);
+    cursor: default;
+  }
+  .defter li b { font-weight: 700; font-size: 1.1rem; }
+  .defter li span:last-child { color: var(--metin-2); font-size: .95rem; text-align: right; transition: color .3s; }
+  .defter li:hover span:last-child { color: var(--murekkep); }
+  .ornek { margin: 36px 0 0; color: var(--metin-2); font-size: .92rem; }
+
+  /* ---------- Masadan ---------- */
+  .masa { display: grid; gap: 28px; }
+  @media (min-width: 760px) { .masa { grid-template-columns: repeat(3, 1fr); } }
+  .masa .polaroid { transform: rotate(var(--a, -2deg)); }
+  .masa .polaroid:nth-child(2) { --a: 2.5deg; }
+  .masa .polaroid:nth-child(3) { --a: -1deg; }
+  .masa .polaroid:hover { transform: rotate(0) translateY(-10px) scale(1.04); z-index: 2; }
+  .masa .polaroid img { filter: saturate(.9); transition: filter .5s; }
+  .masa .polaroid:hover img { filter: saturate(1.15); }
+
+  /* ---------- İletişim ---------- */
+  .iletisim { background: var(--murekkep); color: #eef0fb; }
+  .iletisim h2 { color: #fff; }
+  .iletisim .fosfor { color: var(--fosfor); background: none; }
+  .iletisim-ic { display: grid; gap: 40px; }
+  @media (min-width: 880px) { .iletisim-ic { grid-template-columns: 1.1fr 1fr; align-items: start; } }
+  .iletisim .alt { color: #c3c8ea; }
+  .iletisim .btn { border-color: var(--fosfor); box-shadow: 0 6px 16px -6px rgb(0 0 0 / .5); }
+  .iletisim .btn-bos { background: transparent; color: #fff; }
+  .iletisim .btn-bos:hover { background: rgb(255 255 255 / .08); }
+  .satirlar { display: grid; gap: 22px; }
+  .satirlar .el { color: var(--fosfor); font-size: 1.5rem; display: block; line-height: 1; margin-bottom: 4px; }
+  .satirlar a, .satirlar p { margin: 0; font-size: 1.2rem; text-decoration: none; }
+  .bos { color: #c3c8ea; font-style: italic; font-size: 1rem !important; }
+
+  footer { background: var(--murekkep); color: #a9b0db; font-size: .85rem; padding: 0 0 120px; }
+  footer .kap { border-top: 1px solid rgb(255 255 255 / .15); padding-top: 28px; }
+  footer p { margin: 0 0 8px; }
+  footer a { color: #dfe3fa; }
+  @media (min-width: 880px) { footer { padding-bottom: 36px; } }
+
+  .alt-cubuk { position: fixed; inset: auto 12px 12px; z-index: 10; display: grid; grid-template-columns: 1.3fr 1fr; gap: 8px; }
+  .alt-cubuk .btn { justify-content: center; }
+  @media (min-width: 880px) { .alt-cubuk { display: none; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before { transition: none !important; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<header class="giris">
+  <div class="kap giris-ic">
+    <div>
+      <h1>Akademi <span class="fosfor hep">Cafe</span></h1>
+      <p>Bir kahve molası, sıcak bir tost, biraz sohbet. Gelmeden yazın, masanız hazır olsun.</p>
+      <div class="eylemler">
+        <a class="btn btn-dolu" href="https://wa.me/905532248646?text=Merhaba%2C%20sipari%C5%9F%20vermek%20istiyorum.">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
+          WhatsApp'tan yaz
+        </a>
+        <a class="btn btn-bos" href="#menu">Menüye göz at</a>
+      </div>
+    </div>
+    <div class="pano">
+      <figure class="polaroid">
+        <img src="foto/1.jpg" alt="Ahşap masada fincanda Türk kahvesi" fetchpriority="high">
+        <figcaption class="el">bir Türk kahvesi?</figcaption>
+      </figure>
+      <div class="not el" aria-hidden="true">ders arası<br>molası</div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="menu" aria-labelledby="menu-baslik">
+    <div class="kap">
+      <h2 id="menu-baslik">Bugünün <span class="fosfor hep">notları</span></h2>
+      <p class="alt">Üzerine gelin, sevdiğinizi işaretleyin.</p>
+      <div class="defter">
+        <div>
+          <h3 class="el">Sıcaklar</h3>
+          <ul>
+            <li><b><span class="fosfor">Türk kahvesi</span></b><span>lokumla</span></li>
+            <li><b><span class="fosfor">Filtre kahve</span></b><span>bol, sıcak</span></li>
+            <li><b><span class="fosfor">Latte</span></b><span>sütlü, köpüklü</span></li>
+            <li><b><span class="fosfor">Demleme çay</span></b><span>ince belli</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="el">Atıştırmalık</h3>
+          <ul>
+            <li><b><span class="fosfor">Kaşarlı tost</span></b><span>sıcak sıcak</span></li>
+            <li><b><span class="fosfor">Karışık tost</span></b><span>sucuklu, kaşarlı</span></li>
+            <li><b><span class="fosfor">Kek dilimi</span></b><span>kahvenin yanına</span></li>
+            <li><b><span class="fosfor">Limonata</span></b><span>ev yapımı</span></li>
+          </ul>
+        </div>
+      </div>
+      <p class="ornek">Örnek menü ve örnek fotoğraflardır; kendi ürünleriniz, fiyatlarınız ve fotoğraflarınızla güncellenir.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="masa-baslik" style="padding-top:0">
+    <div class="kap">
+      <h2 id="masa-baslik">Masadan</h2>
+      <p class="alt">Kahve fincanından kareler.</p>
+      <div class="masa">
+        <figure class="polaroid"><img src="foto/2.jpg" alt="Elde tutulan, köpüğünde desen olan cappuccino" loading="lazy"><figcaption class="el">köpük sanatı</figcaption></figure>
+        <figure class="polaroid"><img src="foto/3.jpg" alt="Ahşap masada espresso ve latte" loading="lazy"><figcaption class="el">ikili mola</figcaption></figure>
+        <figure class="polaroid"><img src="foto/4.jpg" alt="Gümüş tepside Türk kahvesi ve su" loading="lazy"><figcaption class="el">klasik</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="iletisim" aria-labelledby="iletisim-baslik">
+    <div class="kap iletisim-ic">
+      <div>
+        <h2 id="iletisim-baslik">Bir mesaj <span class="fosfor hep">yeter</span></h2>
+        <p class="alt">Sipariş, masa ya da toplu kahve için yazın.</p>
+        <div class="eylemler">
+          <a class="btn btn-dolu" href="https://wa.me/905532248646?text=Merhaba%2C%20sipari%C5%9F%20vermek%20istiyorum.">WhatsApp'tan yaz</a>
+          <a class="btn btn-bos" href="tel:+905532248646">Ara</a>
+        </div>
+      </div>
+      <div class="satirlar">
+        <div><span class="el">telefon</span><a href="tel:+905532248646">0553 224 86 46</a></div>
+        <div><span class="el">adres</span><p class="bos">Adresiniz buraya eklenecek · <a href="https://www.google.com/maps/search/?api=1&amp;query=Akademi%20Cafe" target="_blank" rel="noopener" style="font-style:normal">haritada ara</a></p></div>
+        <div><span class="el">saatler</span><p class="bos">Açılış ve kapanış saatleriniz buraya eklenecek</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="kap">
+    <p>Bu sayfa Akademi Cafe için hazırlanmış bir tasarım önizlemesidir.</p>
+    <p>Hazırlayan: Evren Arif Kaya · Evolveatech · 0553 708 67 54</p>
+    <p>Örnek fotoğraflar Wikimedia Commons'tan:
+      <a href="https://commons.wikimedia.org/wiki/File:Turkish_coffee_Turk_kahvesi.jpg">Cromptonenator1</a> (CC BY-SA 4.0),
+      <a href="https://commons.wikimedia.org/wiki/File:A_person_holds_a_cup_of_cappuccino_featuring_intricate_latte_art,_sitting_at_a_caf%C3%A9_table.jpg">Shixart1985</a>,
+      <a href="https://commons.wikimedia.org/wiki/File:Espresso_coffee_and_Caffee_latte_and_wooden_table_in_a_cafe.jpg">Shixart1985</a> (CC BY 2.0),
+      <a href="https://commons.wikimedia.org/wiki/File:Turkish_coffee_in_Istanbul.jpg">Tema</a> (CC BY-SA 3.0).</p>
+  </div>
+</footer>
+
+<nav class="alt-cubuk" aria-label="Hızlı iletişim">
+  <a class="btn btn-dolu" href="https://wa.me/905532248646?text=Merhaba%2C%20sipari%C5%9F%20vermek%20istiyorum.">WhatsApp</a>
+  <a class="btn btn-bos" href="tel:+905532248646">Ara</a>
+</nav>
+
+</body>
+</html>
