@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Abdüsselam Balaban Kebap</title>
+<meta name="description" content="Abdüsselam Balaban Kebap: menü, çalışma saatleri ve iletişim.">
+<meta name="theme-color" content="#a81d1a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- Görseller: tamamı bu dosyada SVG/CSS ile çizilmiştir; harici fotoğraf kullanılmamıştır. -->
+<style>
+  :root {
+    --tabela: #a81d1a;
+    --tabela-koyu: #7d1412;
+    --altin: #f4c24d;
+    --altin-soluk: #f7d98c;
+    --komur: #1f1a17;
+    --komur-2: #2b2420;
+    --koz: #ec6a2c;
+    --cini: #f2f4f3;
+    --cini-mavi: #1d4f8f;
+    --metin: #231e1b;
+    --metin-2: #5b524c;
+    --golge: 0 2px 4px rgb(31 26 23 / .18), 0 10px 24px rgb(31 26 23 / .18);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: "Work Sans", -apple-system, system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--metin);
+    background: var(--cini);
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--altin); color: var(--komur); }
+  a { color: inherit; text-underline-offset: 3px; }
+  :focus-visible { outline: 3px solid var(--altin); outline-offset: 3px; border-radius: 6px; }
+  .kap { width: min(1120px, 100% - 32px); margin-inline: auto; }
+
+  /* ---------- Tabela ---------- */
+  .tabela {
+    position: relative;
+    background:
+      radial-gradient(120% 90% at 85% 100%, rgb(236 106 44 / .35), transparent 60%),
+      var(--tabela);
+    color: #fff;
+    overflow: hidden;
+    border-bottom: 10px solid var(--altin);
+  }
+  .tabela::before {
+    /* boyalı tenekenin perçin sırası */
+    content: "";
+    position: absolute; inset: 14px 14px auto;
+    height: 6px;
+    background: radial-gradient(circle, rgb(0 0 0 / .28) 2.2px, transparent 2.6px) 0 0 / 28px 6px repeat-x;
+  }
+  .tabela-ic {
+    display: grid;
+    gap: 36px;
+    padding-block: 64px 0;
+  }
+  .tabela-yazi { display: grid; gap: 22px; justify-items: start; }
+  h1 {
+    font-family: "Alfa Slab One", Georgia, serif;
+    font-weight: 400;
+    margin: 0;
+    line-height: .95;
+    letter-spacing: -.01em;
+    text-wrap: balance;
+  }
+  h1 .isim { display: block; font-size: clamp(2.4rem, 9vw, 5.2rem); }
+  h1 .kebap {
+    display: inline-block;
+    margin-top: .18em;
+    font-size: clamp(3.4rem, 15vw, 8.5rem);
+    color: var(--altin);
+    text-shadow: 0 4px 0 var(--tabela-koyu);
+  }
+  .tabela p.giris {
+    margin: 0;
+    max-width: 34ch;
+    font-size: 1.15rem;
+    color: #fde9e4;
+  }
+  .eylemler { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    min-height: 52px;
+    padding: 0 22px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 1.02rem;
+    text-decoration: none;
+    transition: transform .18s cubic-bezier(.2,.8,.2,1), background-color .18s;
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn-altin { background: var(--altin); color: var(--komur); box-shadow: 0 3px 0 #b98a1d; }
+  .btn-altin:hover { background: var(--altin-soluk); }
+  .btn-cizgi { color: #fff; border: 2px solid rgb(255 255 255 / .55); }
+  .btn-cizgi:hover { background: rgb(255 255 255 / .1); border-color: #fff; }
+  .btn svg { width: 20px; height: 20px; flex: none; }
+
+  .mangal { width: 100%; max-width: 560px; justify-self: center; display: block; margin-bottom: -6px; }
+  .koz { animation: koz 3.2s ease-in-out infinite alternate; transform-origin: center; }
+  .koz:nth-of-type(2n) { animation-delay: -1.1s; animation-duration: 2.6s; }
+  .koz:nth-of-type(3n) { animation-delay: -2s; animation-duration: 3.8s; }
+  @keyframes koz { from { opacity: .55; } to { opacity: 1; } }
+
+  @media (min-width: 860px) {
+    .tabela-ic { grid-template-columns: 1.1fr .9fr; align-items: end; padding-top: 96px; }
+    .tabela-yazi { padding-bottom: 64px; gap: 28px; }
+    .mangal { margin-bottom: -10px; }
+  }
+
+  /* ---------- Menü (çini) ---------- */
+  .menu {
+    padding-block: 80px 88px;
+    background:
+      linear-gradient(var(--cini), var(--cini)) padding-box,
+      var(--cini);
+  }
+  .cini-serit {
+    height: 28px;
+    background:
+      radial-gradient(circle at 14px 14px, var(--cini-mavi) 5px, transparent 5.5px),
+      radial-gradient(circle at 14px 14px, transparent 9px, var(--cini-mavi) 9.5px, var(--cini-mavi) 11px, transparent 11.5px),
+      linear-gradient(45deg, transparent 46%, rgb(29 79 143 / .35) 47% 53%, transparent 54%);
+    background-size: 28px 28px;
+    opacity: .9;
+  }
+  h2 {
+    font-family: "Alfa Slab One", Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(2.2rem, 6vw, 3.4rem);
+    line-height: 1;
+    margin: 0 0 12px;
+    color: var(--tabela);
+  }
+  .menu .alt { margin: 0 0 40px; color: var(--metin-2); max-width: 52ch; }
+  .menu-liste {
+    display: grid;
+    gap: 0 56px;
+    margin: 0; padding: 0; list-style: none;
+  }
+  @media (min-width: 760px) { .menu-liste { grid-template-columns: 1fr 1fr; } }
+  .menu-liste li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2px 16px;
+    padding: 18px 0;
+    border-bottom: 2px dotted rgb(29 79 143 / .35);
+  }
+  .menu-liste .ikon {
+    grid-row: span 2;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--cini-mavi);
+    display: grid; place-items: center;
+  }
+  .menu-liste .ikon svg { width: 24px; height: 24px; }
+  .menu-liste b { font-weight: 600; font-size: 1.1rem; color: var(--metin); }
+  .menu-liste span { color: var(--metin-2); font-size: .97rem; }
+  .ornek-not {
+    margin: 28px 0 0;
+    display: inline-flex; gap: 8px; align-items: center;
+    font-size: .92rem;
+    color: var(--cini-mavi);
+    background: rgb(29 79 143 / .08);
+    padding: 8px 14px;
+    border-radius: 8px;
+  }
+
+  /* ---------- Bilgi (kömür) ---------- */
+  .bilgi { background: var(--komur); color: #f1ece8; padding-block: 80px; }
+  .bilgi h2 { color: var(--altin); }
+  .bilgi-izgara { display: grid; gap: 40px; margin-top: 36px; }
+  @media (min-width: 860px) { .bilgi-izgara { grid-template-columns: repeat(3, 1fr); } }
+  .bilgi h3 {
+    margin: 0 0 10px;
+    font-size: .95rem;
+    font-weight: 600;
+    color: var(--altin-soluk);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .bilgi h3 svg { width: 18px; height: 18px; }
+  .bilgi .deger { font-size: 1.35rem; font-weight: 500; margin: 0 0 14px; }
+  .bilgi .deger a { text-decoration: none; }
+  .bilgi .deger a:hover { text-decoration: underline; }
+  .bos {
+    margin: 0 0 14px;
+    padding: 14px 16px;
+    border: 1.5px dashed rgb(244 194 77 / .45);
+    border-radius: 10px;
+    color: #cfc6bf;
+    font-size: .98rem;
+  }
+  .kucuk-link { color: var(--altin); font-weight: 500; }
+
+  /* ---------- Alt ---------- */
+  footer {
+    background: var(--komur-2);
+    color: #b9afa8;
+    font-size: .88rem;
+    padding: 28px 0 112px;
+  }
+  footer p { margin: 0 0 6px; }
+  footer .imza { white-space: pre-line; color: #d9d1cb; }
+  @media (min-width: 860px) { footer { padding-bottom: 32px; } }
+
+  /* ---------- Mobil arama çubuğu ---------- */
+  .ara-cubuk {
+    position: fixed; inset: auto 12px 12px;
+    display: flex;
+    z-index: 10;
+  }
+  .ara-cubuk a {
+    flex: 1;
+    justify-content: center;
+    box-shadow: var(--golge), 0 3px 0 #b98a1d;
+  }
+  @media (min-width: 860px) { .ara-cubuk { display: none; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .koz { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="tabela">
+  <div class="kap tabela-ic">
+    <div class="tabela-yazi">
+      <h1><span class="isim">Abdüsselam Balaban</span><span class="kebap">Kebap</span></h1>
+      <p class="giris">Mangal başından masanıza. Menüye göz atın, bir telefonla siparişinizi verin.</p>
+      <div class="eylemler">
+        <a class="btn btn-altin" href="tel:+902222311444">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+          (0222) 231 14 44
+        </a>
+        <a class="btn btn-cizgi" href="#menu">Menüye bak</a>
+      </div>
+    </div>
+
+    <svg class="mangal" viewBox="0 0 560 300" role="img" aria-label="Mangalda pişen şiş kebaplar">
+      <defs>
+        <linearGradient id="ateş" x1="0" y1="1" x2="0" y2="0">
+          <stop offset="0" stop-color="#ffb347"/>
+          <stop offset="1" stop-color="#ec6a2c" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="et" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#9a4a26"/>
+          <stop offset="1" stop-color="#5e2a16"/>
+        </linearGradient>
+      </defs>
+      <!-- sıcak hava -->
+      <rect x="70" y="120" width="420" height="120" fill="url(#ateş)" opacity=".5"/>
+      <!-- şişler -->
+      <g stroke="#d9d4cf" stroke-width="4" stroke-linecap="round">
+        <line x1="40" y1="92" x2="520" y2="92"/>
+        <line x1="40" y1="140" x2="520" y2="140"/>
+        <line x1="40" y1="188" x2="520" y2="188"/>
+      </g>
+      <g fill="#d9d4cf"><circle cx="40" cy="92" r="9"/><circle cx="40" cy="140" r="9"/><circle cx="40" cy="188" r="9"/></g>
+      <!-- adana: uzun kıyma -->
+      <rect x="120" y="78" width="330" height="28" rx="14" fill="url(#et)"/>
+      <g stroke="#3e1b0e" stroke-width="3" stroke-linecap="round" opacity=".55">
+        <path d="M160 80v24M205 80v24M250 80v24M295 80v24M340 80v24M385 80v24M425 80v24"/>
+      </g>
+      <!-- şiş: et ve biber -->
+      <g>
+        <rect x="118" y="124" width="40" height="32" rx="9" fill="url(#et)"/>
+        <rect x="164" y="126" width="26" height="28" rx="8" fill="#3f8a3a"/>
+        <rect x="196" y="124" width="40" height="32" rx="9" fill="url(#et)"/>
+        <rect x="242" y="126" width="26" height="28" rx="8" fill="#d8322b"/>
+        <rect x="274" y="124" width="40" height="32" rx="9" fill="url(#et)"/>
+        <rect x="320" y="126" width="26" height="28" rx="8" fill="#3f8a3a"/>
+        <rect x="352" y="124" width="40" height="32" rx="9" fill="url(#et)"/>
+        <rect x="398" y="126" width="26" height="28" rx="8" fill="#d8322b"/>
+      </g>
+      <!-- domates ve közlenmiş biber -->
+      <g>
+        <circle cx="150" cy="188" r="20" fill="#d8322b"/><path d="M143 170q7 5 14 0" stroke="#3f8a3a" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <circle cx="205" cy="188" r="20" fill="#d8322b"/><path d="M198 170q7 5 14 0" stroke="#3f8a3a" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M250 180q60-18 130 0q8 10 0 16q-70 14-130 0q-8-8 0-16z" fill="#4c8f3f"/>
+        <path d="M262 184q50-10 100-2" stroke="#2f6528" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7"/>
+        <circle cx="430" cy="188" r="20" fill="#d8322b"/><path d="M423 170q7 5 14 0" stroke="#3f8a3a" stroke-width="4" fill="none" stroke-linecap="round"/>
+      </g>
+      <!-- mangal gövdesi -->
+      <path d="M50 222h460l-22 70H72z" fill="#2b2420"/>
+      <rect x="44" y="214" width="472" height="14" rx="4" fill="#3a312b"/>
+      <!-- közler -->
+      <g>
+        <circle class="koz" cx="100" cy="236" r="12" fill="#ec6a2c"/>
+        <circle class="koz" cx="132" cy="240" r="9" fill="#ffb347"/>
+        <circle class="koz" cx="170" cy="236" r="13" fill="#ec6a2c"/>
+        <circle class="koz" cx="208" cy="241" r="10" fill="#ffb347"/>
+        <circle class="koz" cx="246" cy="236" r="12" fill="#d84a22"/>
+        <circle class="koz" cx="284" cy="240" r="11" fill="#ffb347"/>
+        <circle class="koz" cx="322" cy="236" r="13" fill="#ec6a2c"/>
+        <circle class="koz" cx="360" cy="241" r="9" fill="#ffb347"/>
+        <circle class="koz" cx="398" cy="236" r="12" fill="#d84a22"/>
+        <circle class="koz" cx="436" cy="240" r="10" fill="#ffb347"/>
+        <circle class="koz" cx="466" cy="236" r="11" fill="#ec6a2c"/>
+      </g>
+    </svg>
+  </div>
+</header>
+
+<main>
+  <div class="cini-serit" aria-hidden="true"></div>
+  <section class="menu" id="menu" aria-labelledby="menu-baslik">
+    <div class="kap">
+      <h2 id="menu-baslik">Menü</h2>
+      <p class="alt">Mangaldan, fırından ve tezgâhtan. Ne yiyeceğinize karar verin, sonra bir telefon yeter.</p>
+      <ul class="menu-liste">
+        <li><span class="ikon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#f4c24d" stroke-width="2" stroke-linecap="round"><path d="M3 12h18"/><rect x="6" y="9" width="12" height="6" rx="3"/></svg></span><b>Adana kebap</b><span>Acılı, zırhla çekilmiş kıyma</span></li>
+        <li><span class="ikon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#f4c24d" stroke-width="2" stroke-linecap="round"><path d="M3 12h18"/><rect x="6" y="9" width="12" height="6" rx="3"/></svg></span><b>Urfa kebap</b><span>Acısız, bol közlenmiş sebze ile</span></li>
+        <li><span class="ikon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#f4c24d" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="7"/><path d="M12 5v14"/></svg></span><b>Beyti sarma</b><span>Lavaşa sarılı, yoğurt ve tereyağı ile</span></li>
+        <li><span class="ikon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#f4c24d" stroke-width="2" stroke-linecap="round"><path d="M3 12h18"/><rect x="5" y="9" width="4" height="6" rx="1.5"/><rect x="10" y="9" width="4" height="6" rx="1.5"/><rect x="15" y="9" width="4" height="6" rx="1.5"/></svg></span><b>Kuzu şiş</b><span>Kuşbaşı, biber ve domates ile</span></li>
+        <li><span class="ikon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#f4c24d" stroke-width="2" stroke-linecap="round"><path d="M3 12h18"/><rect x="5" y="9" width="4" height="6" rx="1.5"/><rect x="10" y="9" width="4" height="6" rx="1.5"/><rect x="15" y="9" width="4" height="6" rx="1.5"/></svg></span><b>Tavuk şiş</b><span>Marine edilmiş tavuk göğsü</span></li>
+        <li><span class="ikon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#f4c24d" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><circle cx="9" cy="10" r="1"/><circle cx="14" cy="9" r="1"/><circle cx="13" cy="14" r="1"/></svg></span><b>Lahmacun</b><span>İnce hamur, taş fırından</span></li>
+        <li><span class="ikon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#f4c24d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12c4-5 16-5 20 0-4 5-16 5-20 0z"/><path d="M7 12h10"/></svg></span><b>Kıymalı pide</b><span>Fırından çıktığı gibi</span></li>
+        <li><span class="ikon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#f4c24d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10l-1.5 18h-7z"/><path d="M7.6 9h8.8"/></svg></span><b>Ayran ve şalgam</b><span>Yanına en iyi giden</span></li>
+      </ul>
+      <p class="ornek-not">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+        Örnek menüdür; kendi ürünleriniz ve fiyatlarınızla güncellenir.
+      </p>
+    </div>
+  </section>
+  <div class="cini-serit" aria-hidden="true"></div>
+
+  <section class="bilgi" aria-labelledby="bilgi-baslik">
+    <div class="kap">
+      <h2 id="bilgi-baslik">Bize ulaşın</h2>
+      <div class="bilgi-izgara">
+        <div>
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>Telefon</h3>
+          <p class="deger"><a href="tel:+902222311444">(0222) 231 14 44</a></p>
+          <p>Sipariş ve rezervasyon için arayın.</p>
+        </div>
+        <div>
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Adres</h3>
+          <p class="bos">Adresiniz ve haritadaki konumunuz buraya eklenecek.</p>
+          <a class="kucuk-link" href="https://www.google.com/maps/search/?api=1&amp;query=Abd%C3%BCsselam%20Balaban%20Kebap" target="_blank" rel="noopener">Haritada ara</a>
+        </div>
+        <div>
+          <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Çalışma saatleri</h3>
+          <p class="bos">Açılış ve kapanış saatleriniz buraya eklenecek.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="kap">
+    <p>Bu sayfa Abdüsselam Balaban Kebap için hazırlanmış bir tasarım önizlemesidir.</p>
+    <p class="imza">Hazırlayan: Evren Arif Kaya · Evolveatech · 0553 708 67 54</p>
+  </div>
+</footer>
+
+<nav class="ara-cubuk" aria-label="Hızlı arama">
+  <a class="btn btn-altin" href="tel:+902222311444">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+    Hemen ara
+  </a>
+</nav>
+
+</body>
+</html>
