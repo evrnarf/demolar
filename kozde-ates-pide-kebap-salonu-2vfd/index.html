@@ -6,316 +6,286 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Közde Ateş Pide Kebap Salonu</title>
 <meta name="description" content="Közde Ateş Pide Kebap Salonu: fırından pide, közden kebap. Menü ve iletişim.">
-<meta name="theme-color" content="#13392f">
+<meta name="theme-color" content="#0f1714">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Manrope:wght@300;400;500;700&display=swap" rel="stylesheet">
 <!--
-  Fotoğraflar Wikimedia Commons'tan, serbest lisanslı (örnek görsel):
-  foto/1.jpg  Lula kebab 2.jpg — Lesya Dolyk, CC BY-SA 2.0 — https://commons.wikimedia.org/wiki/File:Lula_kebab_2.jpg
-  foto/2.jpg  Şiş kebap from Turkey.jpg — E4024, CC BY-SA 4.0
-  foto/3.jpg  Kuzu şiş kebap in Ankara.jpg — E4024, CC BY-SA 4.0
-  foto/4.jpg  Dana şiş (veal shish kebab).jpg — E4024, CC BY-SA 4.0
+  Fotoğraflar (örnek görsel):
+  foto/1.jpg  BBQ Skewers — Jessie Beck, CC0 (Unsplash / Wikimedia Commons)
+  foto/3.jpg  Rustic Restaurant — Adam Wilson, CC0 (Unsplash / Wikimedia Commons)
+  foto/4.jpg  Restaurant at dusk — Patryk Sobczak, CC0 (Unsplash / Wikimedia Commons)
+  foto/5.jpg  Lula kebab 2 — Lesya Dolyk, CC BY-SA 2.0 (Wikimedia Commons)
 -->
 <style>
   :root {
-    --yesil: #13392f;
-    --yesil-2: #1b4a3e;
-    --yesil-3: #0d2a22;
-    --bakir: #a3511f;
-    --bakir-acik: #e89a5f;
-    --bakir-soluk: #f6d3b5;
-    --kemik: #f7f5f1;
-    --metin: #e9efe9;
-    --metin-2: #b6c7bf;
-    --koyu-metin: #1f2a25;
-    --egri: cubic-bezier(.16, 1, .3, 1);
+    --komur: #0f1714;
+    --komur-2: #16211d;
+    --komur-3: #1e2b26;
+    --koz: #d27a3e;
+    --koz-acik: #eba16a;
+    --duman: #ebe4da;
+    --duman-2: #a9a399;
+    --cizgi: rgb(235 228 218 / .14);
+    --egri: cubic-bezier(.22, 1, .36, 1);
+    --serif: "Gloock", Georgia, serif;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
     margin: 0;
-    background: var(--yesil);
-    color: var(--metin);
+    background: var(--komur);
+    color: var(--duman);
     font-family: "Manrope", -apple-system, system-ui, sans-serif;
     font-size: 17px;
-    line-height: 1.6;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
-  ::selection { background: var(--bakir); color: #fff; }
+  ::selection { background: var(--koz); color: var(--komur); }
   a { color: inherit; }
-  :focus-visible { outline: 3px solid var(--bakir-acik); outline-offset: 3px; border-radius: 8px; }
+  :focus-visible { outline: 2px solid var(--koz-acik); outline-offset: 4px; }
   img { display: block; max-width: 100%; }
-  .kap { width: min(1160px, 100% - 32px); margin-inline: auto; }
-  h1, h2 { font-family: "Bricolage Grotesque", system-ui, sans-serif; font-weight: 800; letter-spacing: -.03em; margin: 0; text-wrap: balance; }
+  .kap { width: min(1240px, 100% - 40px); margin-inline: auto; }
+  .ust-yazi { font-size: .76rem; font-weight: 500; letter-spacing: .3em; text-transform: uppercase; color: var(--koz-acik); }
+
+  .js .belir { opacity: 0; transform: translateY(28px); transition: opacity 1.1s var(--egri), transform 1.1s var(--egri); }
+  .js .belir.gorundu { opacity: 1; transform: none; }
+  .js .perde { clip-path: inset(0 0 100% 0); transition: clip-path 1.4s var(--egri); }
+  .js .perde.gorundu { clip-path: inset(0); }
+
+  /* ---------- Gezinme ---------- */
+  .gezinme { position: fixed; inset: 0 0 auto; z-index: 20; transition: background-color .5s, backdrop-filter .5s; }
+  .gezinme.dolu { background: rgb(15 23 20 / .82); backdrop-filter: blur(14px); }
+  .gezinme .kap { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+  .logo { font-family: var(--serif); font-size: 1.4rem; text-decoration: none; letter-spacing: .01em; }
+  .gezinme nav { display: flex; gap: 34px; align-items: center; }
+  .gezinme nav a:not(.btn) { text-decoration: none; font-size: .76rem; letter-spacing: .26em; text-transform: uppercase; color: var(--duman-2); transition: color .3s; }
+  .gezinme nav a:not(.btn):hover { color: var(--duman); }
+  @media (max-width: 760px) { .gezinme nav a:not(.btn) { display: none; } }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 14px;
+    height: 52px; padding: 0 28px;
+    font-size: .76rem; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; text-decoration: none;
+    border: 1px solid rgb(235 228 218 / .5); color: var(--duman);
+    position: relative; overflow: hidden; isolation: isolate;
+    transition: color .6s var(--egri), border-color .6s, box-shadow .6s var(--egri);
+  }
+  .btn::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--koz); transform: scaleX(0); transform-origin: right; transition: transform .7s var(--egri); }
+  .btn:hover::before { transform: scaleX(1); transform-origin: left; }
+  .btn:hover { color: var(--komur); border-color: var(--koz); }
+  .btn-dolu { background: var(--koz); border-color: var(--koz); color: var(--komur); }
+  .btn-dolu::before { background: var(--duman); }
+  .btn .cizgi { width: 26px; height: 1px; background: currentColor; transition: width .6s var(--egri); }
+  .btn:hover .cizgi { width: 42px; }
+  .btn-kucuk { height: 44px; padding: 0 20px; }
 
   /* ---------- Giriş ---------- */
-  .giris {
-    position: relative;
-    min-height: min(92vh, 860px);
-    display: grid;
-    align-items: end;
-    isolation: isolate;
-    overflow: hidden;
-  }
-  .giris > img {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%;
-    object-fit: cover;
-    z-index: -2;
-    transform: scale(1.04);
-    animation: yaklas 14s var(--egri) forwards;
-  }
-  @keyframes yaklas { to { transform: scale(1); } }
-  .giris::after {
-    content: "";
-    position: absolute; inset: 0; z-index: -1;
-    background:
-      linear-gradient(180deg, rgb(13 42 34 / .15) 0%, rgb(13 42 34 / .45) 38%, rgb(13 42 34 / .9) 68%, var(--yesil) 100%);
-  }
-  .giris-ic { padding-block: 120px 64px; display: grid; gap: 22px; }
-  h1 { font-size: clamp(3.4rem, 13vw, 9rem); line-height: .86; }
-  h1 span { color: var(--bakir-acik); display: block; font-size: .42em; letter-spacing: -.01em; line-height: 1.05; margin-top: .22em; }
-  .giris p { margin: 0; max-width: 40ch; font-size: 1.15rem; color: #dfe8e3; text-shadow: 0 1px 12px rgb(13 42 34 / .8); }
-  h1 { text-shadow: 0 2px 24px rgb(13 42 34 / .55); }
-  .eylemler { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
+  .giris { position: relative; min-height: 100svh; display: grid; align-items: end; overflow: hidden; isolation: isolate; }
+  .giris > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -3; transform: scale(1.1); transition: transform 2.6s var(--egri); }
+  .yuklendi .giris > img { transform: scale(1); }
+  .giris::after { content: ""; position: absolute; inset: 0; z-index: -2; background: linear-gradient(180deg, rgb(15 23 20 / .35) 0%, rgb(15 23 20 / .2) 35%, rgb(15 23 20 / .85) 78%, var(--komur) 100%), radial-gradient(80% 60% at 20% 100%, rgb(15 23 20 / .6), transparent); }
+  #kivilcim { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+  .giris-ic { padding-block: 140px 88px; display: grid; gap: 26px; }
+  h1 { font-family: var(--serif); font-weight: 400; margin: 0; font-size: clamp(4.2rem, 13vw, 11rem); line-height: .86; letter-spacing: -.03em; }
+  .giris .alt { display: flex; flex-wrap: wrap; gap: 18px 40px; align-items: end; justify-content: space-between; }
+  .giris p { margin: 0; max-width: 36ch; color: #d9d2c8; font-size: 1.12rem; font-weight: 300; }
 
-  /* Butonlar: bakır dolgu soldan akar */
-  .btn {
-    position: relative;
-    display: inline-flex; align-items: center; gap: 10px;
-    min-height: 54px; padding: 0 24px;
-    border-radius: 14px;
-    font-weight: 700; font-size: 1rem;
-    text-decoration: none;
-    overflow: hidden;
-    isolation: isolate;
-    transition: transform .35s var(--egri), box-shadow .35s var(--egri), color .35s;
-  }
-  .btn::before {
-    content: ""; position: absolute; inset: 0; z-index: -1;
-    background: var(--bakir-acik);
-    transform: scaleX(0); transform-origin: left;
-    transition: transform .45s var(--egri);
-  }
-  .btn:hover::before { transform: scaleX(1); }
-  .btn:hover { transform: translateY(-3px); box-shadow: 0 14px 30px -10px rgb(232 154 95 / .7); }
-  .btn svg { width: 20px; height: 20px; flex: none; transition: transform .35s var(--egri); }
-  .btn:hover svg { transform: rotate(-12deg) scale(1.1); }
-  .btn-bakir { background: var(--bakir); color: #fff; }
-  .btn-bakir:hover { color: var(--yesil-3); }
-  .btn-cizgi { border: 2px solid rgb(255 255 255 / .6); color: #fff; }
-  .btn-cizgi:hover { color: var(--yesil-3); border-color: var(--bakir-acik); }
+  /* ---------- Söz ---------- */
+  .soz { padding: clamp(110px, 15vw, 190px) 0; }
+  .soz-ic { display: grid; gap: 40px; }
+  .soz blockquote { max-width: 24ch; }
+  .soz blockquote { margin: 0; font-family: var(--serif); font-size: clamp(2.2rem, 5vw, 4.2rem); line-height: 1.08; letter-spacing: -.015em; }
+  .soz blockquote span { color: var(--koz-acik); }
 
-  /* ---------- Ocaktan ---------- */
-  section { padding-block: 96px; }
-  h2 { font-size: clamp(2.4rem, 7vw, 4.4rem); line-height: .95; }
-  h2 em { font-style: normal; color: var(--bakir-acik); }
-  .bolum-bas { display: grid; gap: 14px; margin-bottom: 44px; max-width: 620px; }
-  .bolum-bas p { margin: 0; color: var(--metin-2); }
-
-  .tabaklar { display: grid; gap: 18px; }
-  @media (min-width: 820px) { .tabaklar { grid-template-columns: repeat(3, 1fr); } }
-  .tabak {
-    position: relative;
-    margin: 0;
-    border-radius: 22px;
-    overflow: hidden;
-    aspect-ratio: 4 / 5;
-    background: var(--yesil-3);
-    box-shadow: 0 0 0 1px rgb(255 255 255 / .06);
-    transition: transform .5s var(--egri), box-shadow .5s var(--egri);
-  }
-  .tabak img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--egri), filter .5s; filter: saturate(.92); }
-  .tabak figcaption {
-    position: absolute; inset: auto 0 0;
-    padding: 70px 22px 22px;
-    background: linear-gradient(transparent, rgb(13 42 34 / .94));
-  }
-  .tabak b { display: block; font-family: "Bricolage Grotesque", sans-serif; font-size: 1.7rem; letter-spacing: -.02em; line-height: 1.1; }
-  .tabak span {
-    display: block;
-    color: var(--bakir-soluk);
-    max-height: 0; opacity: 0;
-    transform: translateY(8px);
-    transition: max-height .5s var(--egri), opacity .4s, transform .5s var(--egri);
-  }
-  .tabak:hover, .tabak:focus-within { transform: translateY(-8px); box-shadow: 0 0 0 2px var(--bakir-acik), 0 28px 50px -20px rgb(232 154 95 / .55); }
-  .tabak:hover img { transform: scale(1.09); filter: saturate(1.1); }
-  .tabak:hover span { max-height: 4em; opacity: 1; transform: none; }
-  @media (hover: none) { .tabak span { max-height: none; opacity: 1; transform: none; } }
+  /* ---------- İmza tabaklar ---------- */
+  .imza { display: grid; gap: 22px; padding-bottom: clamp(110px, 14vw, 180px); }
+  .imza figure { max-width: 980px; margin-inline: auto; width: 100%; }
+  .imza figure { margin: 0; overflow: hidden; position: relative; }
+  .imza img { width: 100%; object-fit: cover; transition: transform 1.6s var(--egri), filter .8s; filter: saturate(.92); }
+  .imza img { aspect-ratio: 16 / 10; }
+  .imza figure:hover img { transform: scale(1.06); filter: saturate(1.08); }
+  .imza figcaption { display: flex; justify-content: space-between; gap: 16px; padding-top: 16px; border-top: 1px solid var(--cizgi); margin-top: 16px; }
+  .imza figcaption b { font-family: var(--serif); font-weight: 400; font-size: 1.6rem; }
+  .imza figcaption span { color: var(--duman-2); font-size: .95rem; text-align: right; }
 
   /* ---------- Menü ---------- */
-  .menu { background: var(--kemik); color: var(--koyu-metin); border-radius: 32px 32px 0 0; }
-  .menu h2 { color: var(--yesil); }
-  .menu h2 em { color: var(--bakir); }
-  .menu .bolum-bas p { color: #4d5a53; }
-  .liste { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px 48px; }
-  @media (min-width: 820px) { .liste { grid-template-columns: 1fr 1fr; } }
-  .liste li {
-    display: flex; align-items: baseline; gap: 14px;
-    padding: 18px 16px;
-    margin-inline: -16px;
-    border-radius: 14px;
-    transition: background-color .3s, transform .4s var(--egri);
+  .menu { background: var(--komur-2); padding: clamp(100px, 13vw, 170px) 0; }
+  .bolum-bas { display: flex; justify-content: space-between; align-items: end; gap: 24px; flex-wrap: wrap; margin-bottom: 56px; }
+  h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(2.8rem, 7vw, 5.2rem); line-height: .95; letter-spacing: -.02em; margin: 0; }
+  .bolum-bas p { margin: 0; max-width: 32ch; color: var(--duman-2); }
+  .menu-ic { display: grid; gap: 56px 80px; }
+  @media (min-width: 900px) { .menu-ic { grid-template-columns: 1fr 1fr; } }
+  .menu h3 { margin: 0 0 8px; }
+  .menu ul { list-style: none; margin: 0; padding: 0; }
+  .menu li {
+    position: relative;
+    display: grid; grid-template-columns: 1fr auto; gap: 2px 20px; align-items: baseline;
+    padding: 20px 0; border-bottom: 1px solid var(--cizgi);
   }
-  .liste li:hover { background: #ecebe5; transform: translateX(6px); }
-  .liste b { font-weight: 700; font-size: 1.1rem; }
-  .liste .nokta { flex: 1; border-bottom: 2px dotted #c9c6bb; transform: translateY(-5px); transition: border-color .3s; }
-  .liste li:hover .nokta { border-color: var(--bakir); }
-  .liste span:last-child { color: #5d6a63; font-size: .95rem; text-align: right; }
-  .ornek {
-    margin: 32px 0 0;
-    font-size: .92rem;
-    color: #4d5a53;
-    display: flex; gap: 8px; align-items: center;
-  }
+  .menu li::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 1px; background: var(--koz); transform: scaleX(0); transform-origin: left; transition: transform .8s var(--egri); }
+  .menu li:hover::after { transform: scaleX(1); }
+  .menu li b { font-family: var(--serif); font-weight: 400; font-size: 1.55rem; line-height: 1.2; transition: color .4s, transform .7s var(--egri); }
+  .menu li:hover b { color: var(--koz-acik); transform: translateX(10px); }
+  .menu li span { color: var(--duman-2); font-size: .95rem; text-align: right; }
+  .ornek { margin: 44px 0 0; color: var(--duman-2); font-size: .86rem; }
+
+  /* ---------- Salon ---------- */
+  .salon { padding: clamp(100px, 13vw, 170px) 0; }
+  .salon-ic { display: grid; gap: 22px; }
+  @media (min-width: 900px) { .salon-ic { grid-template-columns: 5fr 7fr; align-items: start; } .salon-ic figure:nth-child(1) { margin-top: 30%; } }
+  .salon figure { margin: 0; overflow: hidden; }
+  .salon img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform 1.6s var(--egri); }
+  .salon-ic figure:nth-child(1) img { aspect-ratio: 4 / 5; }
+  .salon figure:hover img { transform: scale(1.06); }
+
+  /* ---------- Davet ---------- */
+  .davet { position: relative; min-height: 80svh; display: grid; place-items: center; text-align: center; overflow: hidden; isolation: isolate; }
+  .davet img { position: absolute; inset: -10% 0; width: 100%; height: 120%; object-fit: cover; z-index: -2; will-change: transform; }
+  .davet::after { content: ""; position: absolute; inset: 0; z-index: -1; background: rgb(15 23 20 / .62); }
+  .davet h2 { font-size: clamp(3.2rem, 9vw, 7.4rem); margin: 18px 0 38px; }
+  .davet .eylemler { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
 
   /* ---------- İletişim ---------- */
-  .iletisim { background: var(--kemik); color: var(--koyu-metin); padding-top: 0; }
-  .kart {
-    background: var(--yesil);
-    color: var(--metin);
-    border-radius: 28px;
-    padding: clamp(28px, 6vw, 64px);
-    display: grid; gap: 36px;
-    position: relative; overflow: hidden;
-  }
-  .kart::after {
-    content: ""; position: absolute; right: -120px; top: -120px;
-    width: 360px; height: 360px; border-radius: 50%;
-    background: radial-gradient(circle, rgb(232 154 95 / .35), transparent 65%);
-    pointer-events: none;
-  }
-  @media (min-width: 820px) { .kart { grid-template-columns: 1.2fr 1fr; align-items: center; } }
-  .bilgiler { display: grid; gap: 18px; }
-  .bilgi { display: grid; grid-template-columns: 40px 1fr; gap: 2px 14px; align-items: start; }
-  .bilgi svg { width: 22px; height: 22px; color: var(--bakir-acik); grid-row: span 2; margin-top: 4px; }
-  .bilgi small { color: var(--metin-2); font-size: .85rem; }
-  .bilgi a, .bilgi p { margin: 0; font-size: 1.15rem; font-weight: 500; text-decoration: none; }
-  .bilgi a { background: linear-gradient(var(--bakir-acik), var(--bakir-acik)) 0 100% / 0 2px no-repeat; transition: background-size .4s var(--egri); }
-  .bilgi a:hover { background-size: 100% 2px; }
-  .bos { color: var(--metin-2) !important; font-size: 1rem !important; font-style: italic; }
+  .iletisim { padding: clamp(100px, 12vw, 150px) 0; }
+  .iletisim-ic { display: grid; gap: 56px; }
+  @media (min-width: 900px) { .iletisim-ic { grid-template-columns: 1fr 1fr; } }
+  .satirlar { border-top: 1px solid var(--cizgi); }
+  .satirlar div { display: grid; grid-template-columns: 150px 1fr; gap: 16px; align-items: baseline; padding: 22px 0; border-bottom: 1px solid var(--cizgi); }
+  .satirlar .ust-yazi { font-size: .7rem; color: var(--duman-2); }
+  .satirlar a, .satirlar p { margin: 0; font-family: var(--serif); font-size: 1.45rem; text-decoration: none; }
+  .satirlar a { background: linear-gradient(var(--koz), var(--koz)) 0 100% / 0 1px no-repeat; transition: background-size .6s var(--egri), color .3s; }
+  .satirlar a:hover { background-size: 100% 1px; color: var(--koz-acik); }
+  .bos { font-family: "Manrope", sans-serif !important; font-size: 1rem !important; color: var(--duman-2); font-style: italic; }
 
-  footer { background: var(--kemik); color: #5d6a63; font-size: .85rem; padding: 40px 0 120px; }
-  footer p { margin: 0 0 8px; }
-  footer a { color: #3b4741; }
-  @media (min-width: 820px) { footer { padding-bottom: 40px; } }
+  footer { border-top: 1px solid var(--cizgi); color: var(--duman-2); font-size: .82rem; padding: 48px 0 120px; }
+  footer .logo { display: block; color: var(--duman); font-size: 2rem; margin-bottom: 24px; }
+  footer p { margin: 0 0 6px; }
+  footer a { color: var(--duman); }
+  @media (min-width: 900px) { footer { padding-bottom: 48px; } }
 
-  .alt-cubuk {
-    position: fixed; inset: auto 12px 12px; z-index: 10;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
-  }
-  .alt-cubuk .btn { justify-content: center; box-shadow: 0 10px 30px -8px rgb(0 0 0 / .45); }
-  .btn-wp { background: #157043; color: #fff; }
-  @media (min-width: 820px) { .alt-cubuk { display: none; } }
+  .alt-cubuk { position: fixed; inset: auto 14px 14px; z-index: 30; display: grid; grid-template-columns: 1.5fr 1fr; gap: 8px; }
+  .alt-cubuk .btn { justify-content: center; padding: 0 12px; height: 50px; background: var(--komur-3); }
+  .alt-cubuk .btn-dolu { background: var(--koz); color: var(--komur); }
+  @media (min-width: 900px) { .alt-cubuk { display: none; } }
 
   @media (prefers-reduced-motion: reduce) {
-    *, *::before { animation: none !important; transition: none !important; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .js .belir, .js .perde { opacity: 1; transform: none; clip-path: none; }
+    #kivilcim { display: none; }
     html { scroll-behavior: auto; }
   }
 </style>
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
-<header class="giris">
-  <img src="foto/1.jpg" alt="Lavaş üzerinde közlenmiş biber ve soğanla servis edilmiş kebap" fetchpriority="high">
-  <div class="kap giris-ic">
-    <h1>Közde Ateş <span>Pide Kebap Salonu</span></h1>
-    <p>Fırından pide, közden kebap, yanında sıcak lavaş. Acıktıysanız bir mesaj yeter.</p>
-    <div class="eylemler">
-      <a class="btn btn-bakir" href="https://wa.me/905432626430?text=Merhaba%2C%20sipari%C5%9F%20vermek%20istiyorum.">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
-        WhatsApp'tan sipariş
-      </a>
-      <a class="btn btn-cizgi" href="tel:+905432626430">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
-        0543 262 64 30
-      </a>
-    </div>
+<header class="gezinme" id="gezinme">
+  <div class="kap">
+    <a class="logo" href="#">Közde Ateş</a>
+    <nav aria-label="Ana menü">
+      <a href="#menu">Menü</a>
+      <a href="#salon">Salon</a>
+      <a href="#iletisim">İletişim</a>
+      <a class="btn btn-kucuk" href="https://wa.me/905432626430?text=Merhaba%2C%20sipari%C5%9F%20vermek%20istiyorum.">Sipariş</a>
+    </nav>
   </div>
 </header>
 
+<section class="giris">
+  <img src="foto/1.jpg" alt="Közün üzerinde pişen şiş kebaplar" fetchpriority="high">
+  <canvas id="kivilcim" aria-hidden="true"></canvas>
+  <div class="kap giris-ic">
+    <h1 class="belir">Közde Ateş</h1>
+    <span class="ust-yazi belir">Pide · Kebap Salonu</span>
+    <div class="alt belir">
+      <p>Fırından pide, közden kebap, yanında sıcak lavaş. Masanız hazır; siparişiniz bir mesaj uzağınızda.</p>
+      <a class="btn btn-dolu" href="https://wa.me/905432626430?text=Merhaba%2C%20sipari%C5%9F%20vermek%20istiyorum.">WhatsApp'tan sipariş <span class="cizgi" aria-hidden="true"></span></a>
+    </div>
+  </div>
+</section>
+
 <main>
-  <section aria-labelledby="ocak-baslik">
-    <div class="kap">
-      <div class="bolum-bas">
-        <h2 id="ocak-baslik">Ocaktan <em>yeni indi</em></h2>
-        <p>Üzerine gelin, tabağı yakından görün.</p>
-      </div>
-      <div class="tabaklar">
-        <figure class="tabak" tabindex="0">
-          <img src="foto/2.jpg" alt="Közlenmiş domates ve biberle servis edilen şiş kebap" loading="lazy">
-          <figcaption><b>Şiş kebap</b><span>Közlenmiş domates ve biberle, sıcak lavaş üstünde.</span></figcaption>
-        </figure>
-        <figure class="tabak" tabindex="0">
-          <img src="foto/3.jpg" alt="Lavaş ve yeşillikle servis edilen kuzu şiş" loading="lazy">
-          <figcaption><b>Kuzu şiş</b><span>Kuşbaşı kuzu, lavaş ve bol yeşillikle.</span></figcaption>
-        </figure>
-        <figure class="tabak" tabindex="0">
-          <img src="foto/4.jpg" alt="Domates ve sivri biberle dana şiş" loading="lazy">
-          <figcaption><b>Dana şiş</b><span>Yumuşak dana eti, közde sivri biber eşliğinde.</span></figcaption>
-        </figure>
-      </div>
+  <section class="soz">
+    <div class="kap soz-ic">
+      <blockquote class="belir">Ateş yanar, köz kızarır, kebap <span>sabırla</span> pişer. Pide fırından çıktığı an masanızdadır.</blockquote>
     </div>
   </section>
+
+  <div class="kap imza">
+    <figure>
+      <img class="perde" src="foto/5.jpg" alt="Lavaş üzerinde, kırmızı soğanla servis edilen Adana kebap" loading="lazy">
+      <figcaption><b>Adana kebap</b><span>Közde, lavaş ve kırmızı soğanla</span></figcaption>
+    </figure>
+  </div>
 
   <section class="menu" id="menu" aria-labelledby="menu-baslik">
     <div class="kap">
       <div class="bolum-bas">
-        <h2 id="menu-baslik">Menü <em>tahtası</em></h2>
-        <p>Ne yiyeceğinize karar verin, gerisini WhatsApp'tan halledelim.</p>
+        <h2 id="menu-baslik" class="belir">Menü</h2>
+        <p class="belir">Karar verin, gerisini WhatsApp'tan halledelim.</p>
       </div>
-      <ul class="liste">
-        <li><b>Adana kebap</b><span class="nokta" aria-hidden="true"></span><span>acılı, zırh kıyma</span></li>
-        <li><b>Urfa kebap</b><span class="nokta" aria-hidden="true"></span><span>acısız</span></li>
-        <li><b>Kuzu şiş</b><span class="nokta" aria-hidden="true"></span><span>kuşbaşı kuzu</span></li>
-        <li><b>Dana şiş</b><span class="nokta" aria-hidden="true"></span><span>közde biberle</span></li>
-        <li><b>Tavuk kanat</b><span class="nokta" aria-hidden="true"></span><span>mangalda</span></li>
-        <li><b>Ciğer şiş</b><span class="nokta" aria-hidden="true"></span><span>soğan ve sumakla</span></li>
-        <li><b>Kıymalı pide</b><span class="nokta" aria-hidden="true"></span><span>fırından</span></li>
-        <li><b>Kuşbaşılı pide</b><span class="nokta" aria-hidden="true"></span><span>bol malzemeli</span></li>
-        <li><b>Kaşarlı pide</b><span class="nokta" aria-hidden="true"></span><span>tereyağlı</span></li>
-        <li><b>Lahmacun</b><span class="nokta" aria-hidden="true"></span><span>ince hamur</span></li>
-        <li><b>Ayran, şalgam</b><span class="nokta" aria-hidden="true"></span><span>buz gibi</span></li>
-      </ul>
-      <p class="ornek">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
-        Örnek menü ve örnek fotoğraflardır; kendi ürünleriniz, fiyatlarınız ve fotoğraflarınızla güncellenir.
-      </p>
+      <div class="menu-ic">
+        <div class="belir">
+          <h3 class="ust-yazi">Közden</h3>
+          <ul>
+            <li><b>Adana kebap</b><span>acılı, zırh kıyma</span></li>
+            <li><b>Urfa kebap</b><span>acısız</span></li>
+            <li><b>Kuzu şiş</b><span>kuşbaşı kuzu</span></li>
+            <li><b>Ciğer şiş</b><span>soğan ve sumakla</span></li>
+            <li><b>Tavuk kanat</b><span>mangalda</span></li>
+          </ul>
+        </div>
+        <div class="belir">
+          <h3 class="ust-yazi">Fırından</h3>
+          <ul>
+            <li><b>Kıymalı pide</b><span>ince hamur</span></li>
+            <li><b>Kuşbaşılı pide</b><span>bol malzemeli</span></li>
+            <li><b>Kaşarlı pide</b><span>tereyağlı</span></li>
+            <li><b>Lahmacun</b><span>taş fırın</span></li>
+            <li><b>Ayran, şalgam</b><span>yanına</span></li>
+          </ul>
+        </div>
+      </div>
+      <p class="ornek">Örnek menü ve örnek fotoğraflardır; kendi ürünleriniz, fiyatlarınız ve fotoğraflarınızla güncellenir.</p>
     </div>
   </section>
 
-  <section class="iletisim" aria-labelledby="iletisim-baslik">
+  <section class="salon" id="salon" aria-labelledby="salon-baslik">
     <div class="kap">
-      <div class="kart">
-        <div>
-          <h2 id="iletisim-baslik">Acıktınız <em>mı?</em></h2>
-          <p style="color:var(--metin-2);margin:14px 0 26px;max-width:36ch">Sipariş ve rezervasyon için yazın ya da arayın.</p>
-          <div class="eylemler">
-            <a class="btn btn-bakir" href="https://wa.me/905432626430?text=Merhaba%2C%20sipari%C5%9F%20vermek%20istiyorum.">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
-              WhatsApp'tan yaz
-            </a>
-          </div>
-        </div>
-        <div class="bilgiler">
-          <div class="bilgi">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
-            <small>Telefon</small>
-            <a href="tel:+905432626430">0543 262 64 30</a>
-          </div>
-          <div class="bilgi">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <small>Adres</small>
-            <p class="bos">Adresiniz buraya eklenecek · <a href="https://www.google.com/maps/search/?api=1&amp;query=K%C3%B6zde%20Ate%C5%9F%20Pide%20Kebap%20Salonu" target="_blank" rel="noopener" style="font-style:normal">haritada ara</a></p>
-          </div>
-          <div class="bilgi">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
-            <small>Çalışma saatleri</small>
-            <p class="bos">Saatleriniz buraya eklenecek</p>
-          </div>
-        </div>
+      <div class="bolum-bas">
+        <h2 id="salon-baslik" class="belir">Salon</h2>
+        <p class="belir">Ailecek, arkadaşlarla ya da tek başına; sıcak bir masa.</p>
+      </div>
+      <div class="salon-ic">
+        <figure><img class="perde" src="foto/3.jpg" alt="Ahşap masalı, sıcak ışıklı salon" loading="lazy"></figure>
+        <figure><img class="perde" src="foto/4.jpg" alt="Akşam ışığında restoran salonu" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="davet" aria-labelledby="davet-baslik">
+    <img id="paralaks" src="foto/1.jpg" alt="" loading="lazy">
+    <div class="kap">
+      <h2 id="davet-baslik" class="belir">Acıktınız mı?</h2>
+      <div class="eylemler belir">
+        <a class="btn btn-dolu" href="https://wa.me/905432626430?text=Merhaba%2C%20sipari%C5%9F%20vermek%20istiyorum.">WhatsApp'tan yaz <span class="cizgi" aria-hidden="true"></span></a>
+        <a class="btn" href="tel:+905432626430">0543 262 64 30</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="iletisim" id="iletisim" aria-labelledby="iletisim-baslik">
+    <div class="kap iletisim-ic">
+      <div>
+        <h2 id="iletisim-baslik" class="belir">İletişim</h2>
+        <p class="belir" style="color:var(--duman-2);max-width:34ch;margin:20px 0 0">Paket sipariş, rezervasyon ya da kalabalık masalar için yazın veya arayın.</p>
+      </div>
+      <div class="satirlar belir">
+        <div><span class="ust-yazi">Telefon</span><a href="tel:+905432626430">0543 262 64 30</a></div>
+        <div><span class="ust-yazi">WhatsApp</span><a href="https://wa.me/905432626430?text=Merhaba%2C%20sipari%C5%9F%20vermek%20istiyorum.">Mesaj gönderin</a></div>
+        <div><span class="ust-yazi">Adres</span><p class="bos">Adresiniz buraya eklenecek · <a href="https://www.google.com/maps/search/?api=1&amp;query=K%C3%B6zde%20Ate%C5%9F%20Pide%20Kebap%20Salonu" target="_blank" rel="noopener">haritada ara</a></p></div>
+        <div><span class="ust-yazi">Saatler</span><p class="bos">Çalışma saatleriniz buraya eklenecek</p></div>
       </div>
     </div>
   </section>
@@ -323,20 +293,69 @@
 
 <footer>
   <div class="kap">
+    <span class="logo">Közde Ateş</span>
     <p>Bu sayfa Közde Ateş Pide Kebap Salonu için hazırlanmış bir tasarım önizlemesidir.</p>
     <p>Hazırlayan: Evren Arif Kaya · Evolveatech · 0553 708 67 54</p>
-    <p>Örnek fotoğraflar Wikimedia Commons'tan:
-      <a href="https://commons.wikimedia.org/wiki/File:Lula_kebab_2.jpg">Lesya Dolyk</a> (CC BY-SA 2.0),
-      <a href="https://commons.wikimedia.org/wiki/File:%C5%9Ei%C5%9F_kebap_from_Turkey.jpg">E4024</a>,
-      <a href="https://commons.wikimedia.org/wiki/File:Kuzu_%C5%9Fi%C5%9F_kebap_in_Ankara.jpg">E4024</a>,
-      <a href="https://commons.wikimedia.org/wiki/File:Dana_%C5%9Fi%C5%9F_(veal_shish_kebab).jpg">E4024</a> (CC BY-SA 4.0).</p>
+    <p>Örnek fotoğraflar (Wikimedia Commons):
+      <a href="https://commons.wikimedia.org/wiki/File:BBQ_Skewers_(Unsplash).jpg">Jessie Beck</a>,
+      <a href="https://commons.wikimedia.org/wiki/File:Rustic_Restaurant_(Unsplash).jpg">Adam Wilson</a>,
+      <a href="https://commons.wikimedia.org/wiki/File:Restaurant_at_dusk_(Unsplash).jpg">Patryk Sobczak</a> (CC0);
+      <a href="https://commons.wikimedia.org/wiki/File:Lula_kebab_2.jpg">Lesya Dolyk</a> (CC BY-SA 2.0).</p>
   </div>
 </footer>
 
 <nav class="alt-cubuk" aria-label="Hızlı iletişim">
-  <a class="btn btn-wp" href="https://wa.me/905432626430?text=Merhaba%2C%20sipari%C5%9F%20vermek%20istiyorum.">WhatsApp</a>
-  <a class="btn btn-bakir" href="tel:+905432626430">Ara</a>
+  <a class="btn btn-dolu" href="https://wa.me/905432626430?text=Merhaba%2C%20sipari%C5%9F%20vermek%20istiyorum.">WhatsApp</a>
+  <a class="btn" href="tel:+905432626430">Ara</a>
 </nav>
 
+<script>
+  const io = new IntersectionObserver((g) => {
+    for (const e of g) if (e.isIntersecting) { e.target.classList.add('gorundu'); io.unobserve(e.target); }
+  }, { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.belir, .perde').forEach((el) => io.observe(el));
+  requestAnimationFrame(() => document.body.classList.add('yuklendi'));
+
+  const gez = document.getElementById('gezinme');
+  const par = document.getElementById('paralaks');
+  const azHareket = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  addEventListener('scroll', () => {
+    gez.classList.toggle('dolu', scrollY > innerHeight * 0.7);
+    if (!azHareket && par) {
+      const r = par.parentElement.getBoundingClientRect();
+      par.style.transform = `translateY(${(r.top / innerHeight) * -60}px)`;
+    }
+  }, { passive: true });
+
+  // Girişte yükselen kıvılcımlar
+  (() => {
+    if (azHareket) return;
+    const c = document.getElementById('kivilcim'), x = c.getContext('2d');
+    let w, h, dpr = Math.min(devicePixelRatio || 1, 2), parcalar = [], gorunur = true;
+    function boyut() { w = c.clientWidth; h = c.clientHeight; c.width = w * dpr; c.height = h * dpr; x.setTransform(dpr, 0, 0, dpr, 0, 0); }
+    function yeni(alttan) {
+      return { x: Math.random() * w, y: alttan ? h + 10 : Math.random() * h, r: Math.random() * 1.8 + .4,
+               vy: Math.random() * .6 + .25, vx: (Math.random() - .5) * .3, f: Math.random() * Math.PI * 2, o: Math.random() * .6 + .3 };
+    }
+    boyut(); addEventListener('resize', boyut);
+    const sayi = Math.round(Math.min(70, w / 18));
+    for (let i = 0; i < sayi; i++) parcalar.push(yeni(false));
+    new IntersectionObserver(([e]) => { gorunur = e.isIntersecting; if (gorunur) ciz(); }).observe(c);
+    function ciz() {
+      if (!gorunur) return;
+      x.clearRect(0, 0, w, h);
+      for (const p of parcalar) {
+        p.y -= p.vy; p.f += .02; p.x += p.vx + Math.sin(p.f) * .25;
+        const omur = Math.max(0, p.y / h);
+        if (p.y < -10) Object.assign(p, yeni(true));
+        x.beginPath(); x.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        x.fillStyle = `rgba(255, ${150 + Math.round(omur * 60)}, 80, ${p.o * omur})`;
+        x.shadowColor = 'rgba(255,140,60,.9)'; x.shadowBlur = 8; x.fill();
+      }
+      requestAnimationFrame(ciz);
+    }
+    ciz();
+  })();
+</script>
 </body>
 </html>

@@ -5,268 +5,285 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Celal Eskici Kuaför</title>
-<meta name="description" content="Celal Eskici Kuaför: kesim, fön, boya, gelin saçı. Randevu ve iletişim.">
-<meta name="theme-color" content="#2a1230">
+<meta name="description" content="Celal Eskici Kuaför: kesim, fön, renk, gelin saçı. Randevu ve iletişim.">
+<meta name="theme-color" content="#21160f">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <!--
-  Fotoğraflar Wikimedia Commons'tan, serbest lisanslı (örnek görsel):
-  foto/1.jpg  Drying hair in salon.jpg — bradleypjohnson, CC BY 2.0
-  foto/2.jpg  Young woman with long red hair from behind.jpg — Alex Neman, CC BY-SA 4.0
-  foto/3.jpg  Woman with long blond hair.jpg — wht_wolf9653, CC BY-SA 2.0
-  foto/4.jpg  Beauty salon 20211024 171434.jpg — Ka23 13, CC BY-SA 4.0
+  Fotoğraflar (örnek görsel, CC0 — Unsplash'ten Wikimedia Commons'a aktarılmış):
+  foto/1.jpg  Hair Flip — Allef Vinicius
+  foto/2.jpg  Woman red hair looking at sky — Tyler McRobert
+  foto/3.jpg  Braided Hair — Pete Bellis
+  foto/4.jpg  Ombre Hair — Priscilla Du Preez
 -->
 <style>
   :root {
-    --mor: #2a1230;
-    --mor-2: #3b1d42;
-    --mor-3: #1c0b20;
-    --pudra: #f6d4da;
-    --pudra-2: #fbe9ec;
-    --ampul: #ffd88a;
-    --ampul-sicak: #ffb84d;
-    --gul: #a8325a;
-    --metin: #2a1230;
-    --metin-2: #6d5470;
-    --egri: cubic-bezier(.16, 1, .3, 1);
+    --toprak: #21160f;
+    --toprak-2: #2e2018;
+    --bakir: #c88a68;
+    --bakir-acik: #e3b497;
+    --gul: #eee9ee;
+    --gul-2: #ddd3dc;
+    --bakir-koyu: #94553a;
+    --metin: #21160f;
+    --metin-2: #6f5f57;
+    --acik: #f6eeea;
+    --acik-2: #bfaea5;
+    --egri: cubic-bezier(.22, 1, .36, 1);
+    --serif: "Bodoni Moda", Didot, Georgia, serif;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
     margin: 0;
-    background: var(--pudra-2);
+    background: var(--gul);
     color: var(--metin);
     font-family: "Jost", -apple-system, system-ui, sans-serif;
+    font-weight: 400;
     font-size: 17px;
-    line-height: 1.6;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
-  ::selection { background: var(--gul); color: #fff; }
+  ::selection { background: var(--bakir); color: #fff; }
   a { color: inherit; }
-  :focus-visible { outline: 3px solid var(--ampul-sicak); outline-offset: 3px; border-radius: 6px; }
+  :focus-visible { outline: 2px solid var(--bakir); outline-offset: 4px; }
   img { display: block; max-width: 100%; }
-  .kap { width: min(1160px, 100% - 32px); margin-inline: auto; }
-  h1, h2 { font-family: "Bodoni Moda", Didot, Georgia, serif; font-weight: 500; letter-spacing: -.01em; margin: 0; text-wrap: balance; }
+  .kap { width: min(1240px, 100% - 40px); margin-inline: auto; }
+  .ust-yazi { font-size: .78rem; font-weight: 500; letter-spacing: .32em; text-transform: uppercase; }
 
-  /* ---------- Giriş ---------- */
-  .giris { background: var(--mor); color: #f8eef1; overflow: hidden; }
-  .giris-ic { display: grid; gap: 48px; padding-block: 64px 80px; align-items: center; }
-  @media (min-width: 900px) { .giris-ic { grid-template-columns: 1.05fr .95fr; padding-block: 88px 104px; } }
-  h1 { font-size: clamp(3.4rem, 11vw, 7.2rem); line-height: .92; }
-  h1 em { display: block; font-style: normal; color: var(--pudra); }
-  .alt-baslik {
-    display: inline-flex; align-items: center; gap: 14px; margin-top: 18px;
-    font-weight: 600; letter-spacing: .32em; text-transform: uppercase; font-size: .9rem; color: var(--ampul);
+  /* Kaydırınca beliren içerik (JS yoksa her şey görünür) */
+  .js .belir { opacity: 0; transform: translateY(28px); transition: opacity 1.1s var(--egri), transform 1.1s var(--egri); }
+  .js .belir.gorundu { opacity: 1; transform: none; }
+  .js .perde { clip-path: inset(0 0 100% 0); transition: clip-path 1.4s var(--egri); }
+  .js .perde.gorundu { clip-path: inset(0 0 0 0); }
+
+  /* ---------- Gezinme ---------- */
+  .gezinme {
+    position: fixed; inset: 0 0 auto; z-index: 20;
+    color: var(--acik);
+    transition: background-color .5s, color .5s, backdrop-filter .5s;
   }
-  .alt-baslik::before { content: ""; width: 48px; height: 1px; background: currentColor; }
-  .giris p { margin: 26px 0 32px; max-width: 38ch; font-size: 1.15rem; color: #e3cfe0; }
-  .eylemler { display: flex; flex-wrap: wrap; gap: 12px; }
+  .gezinme.dolu { background: rgb(238 233 238 / .88); color: var(--metin); backdrop-filter: blur(14px); }
+  .gezinme .kap { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+  .logo { font-family: var(--serif); font-size: 1.35rem; letter-spacing: .02em; text-decoration: none; }
+  .gezinme nav { display: flex; gap: 34px; align-items: center; }
+  .gezinme nav a:not(.randevu) { text-decoration: none; font-size: .78rem; letter-spacing: .26em; text-transform: uppercase; position: relative; }
+  .gezinme nav a:not(.randevu)::after { content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: right; transition: transform .6s var(--egri); }
+  .gezinme nav a:not(.randevu):hover::after { transform: scaleX(1); transform-origin: left; }
+  @media (max-width: 760px) { .gezinme nav a:not(.randevu) { display: none; } }
 
   .btn {
-    position: relative;
-    display: inline-flex; align-items: center; gap: 10px;
-    min-height: 54px; padding: 0 26px;
-    border-radius: 999px;
-    font-weight: 600; font-size: 1rem; text-decoration: none;
-    overflow: hidden; isolation: isolate;
-    transition: transform .35s var(--egri), box-shadow .35s var(--egri), color .3s;
+    display: inline-flex; align-items: center; gap: 14px;
+    height: 52px; padding: 0 28px;
+    font-size: .78rem; font-weight: 500; letter-spacing: .26em; text-transform: uppercase; text-decoration: none;
+    border: 1px solid currentColor;
+    position: relative; overflow: hidden; isolation: isolate;
+    transition: color .6s var(--egri), border-color .6s;
   }
-  /* Üzerine gelince ışık süzülür */
-  .btn::after {
-    content: ""; position: absolute; inset: -2px; z-index: -1;
-    background: linear-gradient(110deg, transparent 30%, rgb(255 255 255 / .55) 50%, transparent 70%);
-    transform: translateX(-120%);
-    transition: transform .8s var(--egri);
-  }
-  .btn:hover::after { transform: translateX(120%); }
-  .btn:hover { transform: translateY(-3px); box-shadow: 0 14px 34px -10px rgb(255 184 77 / .65); }
-  .btn svg { width: 20px; height: 20px; }
-  .btn-ampul { background: var(--ampul); color: var(--mor-3); }
-  .btn-cizgi { border: 1.5px solid rgb(248 238 241 / .55); color: #f8eef1; }
-  .btn-cizgi:hover { border-color: var(--ampul); color: var(--ampul); }
+  .btn::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--bakir); transform: translateY(101%); transition: transform .6s var(--egri); }
+  .btn:hover::before { transform: none; }
+  .btn:hover { color: var(--toprak); border-color: var(--bakir); }
+  .btn .cizgi { width: 28px; height: 1px; background: currentColor; transition: width .6s var(--egri); }
+  .btn:hover .cizgi { width: 44px; }
+  .btn-dolu { background: var(--bakir); border-color: var(--bakir); color: var(--toprak); }
+  .btn-dolu::before { background: var(--acik); }
+  .randevu { height: 44px; padding: 0 20px; }
 
-  /* ---------- Kulis aynası ---------- */
-  .ayna {
-    position: relative;
-    justify-self: center;
-    width: min(100%, 440px);
-    padding: 30px;
-    border-radius: 18px;
-    background: var(--mor-2);
-    box-shadow: 0 30px 60px -24px rgb(0 0 0 / .6);
-  }
-  .ayna::before {
-    /* ampuller: dört kenar boyunca dizili */
-    --a: radial-gradient(circle, var(--ampul) 0 5px, transparent 6px);
-    content: ""; position: absolute; inset: 0; border-radius: inherit;
-    background:
-      var(--a) center top / 36px 30px repeat-x,
-      var(--a) center bottom / 36px 30px repeat-x,
-      var(--a) left center / 30px 36px repeat-y,
-      var(--a) right center / 30px 36px repeat-y;
-    opacity: .4;
-    filter: saturate(.6);
-    transition: opacity .5s, filter .5s;
-  }
-  .ayna img {
-    position: relative;
-    width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 8px;
-    filter: brightness(.86) saturate(.9);
-    transition: filter .6s var(--egri);
-  }
-  .ayna:hover::before { opacity: 1; filter: drop-shadow(0 0 6px var(--ampul-sicak)) drop-shadow(0 0 14px var(--ampul-sicak)); animation: pirilti 1.6s ease-in-out infinite alternate; }
-  .ayna:hover img { filter: brightness(1.05) saturate(1.05); }
-  @keyframes pirilti { from { opacity: .8; } to { opacity: 1; } }
-  .ayna small { position: absolute; left: 0; right: 0; bottom: -34px; text-align: center; color: #b99bb6; font-size: .85rem; }
+  /* ---------- Giriş ---------- */
+  .giris { min-height: 100svh; display: grid; background: var(--toprak); color: var(--acik); position: relative; overflow: hidden; }
+  @media (min-width: 960px) { .giris { grid-template-columns: 42fr 58fr; } }
+  .giris-yazi { display: grid; align-content: end; gap: 28px; padding: 140px 40px 64px; position: relative; z-index: 2; }
+  @media (min-width: 960px) { .giris-yazi { padding: 140px 56px 80px max(40px, calc((100vw - 1240px) / 2)); } }
+  h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(4rem, 9.5vw, 9.4rem); line-height: .88; letter-spacing: -.035em; margin: 0; }
+  h1 span { display: block; padding-left: .55em; color: var(--bakir-acik); }
+  .giris p { margin: 0; max-width: 34ch; color: var(--acik-2); font-weight: 300; font-size: 1.12rem; }
+  .giris-foto { position: relative; min-height: 62svh; }
+  .giris-foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 60% 30%; transform: scale(1.08); transition: transform 2.4s var(--egri); }
+  .yuklendi .giris-foto img { transform: scale(1); }
+  @media (max-width: 959px) { .giris-yazi { padding-top: 48px; order: 2; } .giris-foto { min-height: 58svh; } }
+  .kaydir { position: absolute; left: 50%; bottom: 28px; width: 1px; height: 56px; background: rgb(246 238 234 / .25); overflow: hidden; z-index: 3; }
+  .kaydir::after { content: ""; position: absolute; inset: 0; background: var(--bakir-acik); animation: akis 2.2s var(--egri) infinite; }
+  @keyframes akis { from { transform: translateY(-100%); } to { transform: translateY(100%); } }
+  @media (max-width: 959px) { .kaydir { display: none; } }
+
+  /* ---------- Söz ---------- */
+  .soz { padding: clamp(110px, 16vw, 200px) 0; text-align: center; }
+  .soz blockquote { margin: 0 auto; max-width: 18ch; font-family: var(--serif); font-size: clamp(2.4rem, 6vw, 5rem); line-height: 1.05; letter-spacing: -.02em; }
+  .soz blockquote em { font-style: normal; color: var(--bakir-koyu); }
+  .soz p { margin: 34px auto 0; max-width: 46ch; color: var(--metin-2); }
 
   /* ---------- Hizmetler ---------- */
-  section { padding-block: 96px; }
-  h2 { font-size: clamp(2.5rem, 7vw, 4.4rem); line-height: 1; color: var(--mor); }
-  h2 em { font-style: normal; color: var(--gul); }
-  .giris-metin { margin: 14px 0 44px; color: var(--metin-2); max-width: 46ch; }
-  .hizmetler { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
-  @media (min-width: 760px) { .hizmetler { grid-template-columns: 1fr 1fr; } }
+  .hizmet-bolum { padding-bottom: clamp(100px, 14vw, 180px); }
+  .bolum-bas { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 40px; flex-wrap: wrap; }
+  h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(2.6rem, 6vw, 4.6rem); line-height: 1; letter-spacing: -.025em; margin: 0; }
+  .bolum-bas p { margin: 0; max-width: 32ch; color: var(--metin-2); }
+  .hizmetler { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--gul-2); }
+  .hizmetler li { border-bottom: 1px solid var(--gul-2); }
   .hizmetler a {
-    position: relative;
-    display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2px 16px;
-    padding: 24px 26px;
-    background: #fff;
-    border-radius: 16px;
-    text-decoration: none;
-    overflow: hidden; isolation: isolate;
-    box-shadow: 0 1px 2px rgb(42 18 48 / .06);
-    transition: transform .45s var(--egri), box-shadow .45s var(--egri), color .3s;
+    display: grid; grid-template-columns: 1fr auto; gap: 6px 32px; align-items: baseline;
+    padding: 30px 4px; text-decoration: none;
+    transition: padding .7s var(--egri), color .4s;
   }
-  .hizmetler a::before {
-    content: ""; position: absolute; inset: 0; z-index: -1;
-    background: var(--mor);
-    clip-path: circle(0% at 90% 50%);
-    transition: clip-path .6s var(--egri);
+  @media (min-width: 760px) { .hizmetler a { grid-template-columns: 1.1fr 1fr auto; } }
+  .hizmetler b { font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 3.4vw, 2.6rem); line-height: 1.1; letter-spacing: -.015em; }
+  .hizmetler small { color: var(--metin-2); font-size: 1rem; font-weight: 300; }
+  .hizmetler .ok { font-size: .74rem; letter-spacing: .26em; text-transform: uppercase; opacity: .45; transition: opacity .4s, transform .7s var(--egri); }
+  .hizmetler a:hover { padding-left: 28px; color: var(--bakir-koyu); }
+  .hizmetler a:hover .ok { opacity: 1; transform: translateX(-8px); }
+  @media (max-width: 759px) { .hizmetler small { grid-column: 1 / -1; } .hizmetler .ok { grid-row: 1; grid-column: 2; } }
+  .onizleme {
+    position: fixed; left: 0; top: 0; z-index: 15; pointer-events: none;
+    width: 260px; aspect-ratio: 4 / 5; overflow: hidden;
+    opacity: 0; transform: translate(-50%, -50%) scale(.85) rotate(-3deg);
+    transition: opacity .4s, transform .6s var(--egri);
+    box-shadow: 0 30px 60px -20px rgb(33 22 15 / .5);
   }
-  .hizmetler b { font-family: "Bodoni Moda", serif; font-weight: 500; font-size: 1.65rem; line-height: 1.15; }
-  .hizmetler small { grid-column: 1; color: var(--metin-2); font-size: .98rem; transition: color .3s; }
-  .hizmetler .ok {
-    grid-row: span 2;
-    font-weight: 600; font-size: .9rem; letter-spacing: .08em; text-transform: uppercase;
-    color: var(--gul);
-    opacity: .0; transform: translateX(-10px);
-    transition: opacity .35s, transform .45s var(--egri), color .3s;
-  }
-  .hizmetler a:hover::before, .hizmetler a:focus-visible::before { clip-path: circle(150% at 90% 50%); }
-  .hizmetler a:hover, .hizmetler a:focus-visible { color: #fff; transform: translateY(-4px); box-shadow: 0 20px 40px -18px rgb(42 18 48 / .55); }
-  .hizmetler a:hover small, .hizmetler a:focus-visible small { color: #d9c3d6; }
-  .hizmetler a:hover .ok, .hizmetler a:focus-visible .ok { opacity: 1; transform: none; color: var(--ampul); }
-  @media (hover: none) { .hizmetler .ok { opacity: 1; transform: none; } }
-  .ornek { margin: 28px 0 0; color: var(--metin-2); font-size: .92rem; }
+  .onizleme.acik { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(0); }
+  .onizleme img { width: 100%; height: 100%; object-fit: cover; }
+  @media (hover: none) { .onizleme { display: none; } }
+  .ornek { margin: 28px 0 0; color: var(--metin-2); font-size: .88rem; }
 
   /* ---------- Galeri ---------- */
-  .galeri-bolum { background: var(--mor); color: #f8eef1; }
-  .galeri-bolum h2 { color: #fff; }
-  .galeri-bolum h2 em { color: var(--pudra); }
-  .galeri { display: grid; gap: 16px; margin-top: 40px; }
-  @media (min-width: 760px) { .galeri { grid-template-columns: 1fr 1.3fr; grid-template-rows: 1fr 1fr; height: 640px; } .galeri figure:first-child { grid-row: span 2; } }
-  .galeri figure { margin: 0; position: relative; overflow: hidden; border-radius: 14px; min-height: 260px; }
-  .galeri img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--egri), filter .6s; filter: grayscale(.25) brightness(.9); }
-  .galeri figcaption {
-    position: absolute; left: 18px; bottom: 16px;
-    font-family: "Bodoni Moda", serif; font-style: italic; font-size: 1.5rem; color: #fff;
-    text-shadow: 0 2px 16px rgb(0 0 0 / .6);
-    transform: translateY(8px); opacity: .85;
-    transition: transform .5s var(--egri), opacity .4s;
-  }
-  .galeri figure:hover img { transform: scale(1.08); filter: none; }
-  .galeri figure:hover figcaption { transform: none; opacity: 1; }
+  .galeri-bolum { background: var(--toprak); color: var(--acik); padding: clamp(100px, 14vw, 180px) 0; }
+  .galeri-bolum .bolum-bas p { color: var(--acik-2); }
+  .galeri { display: grid; gap: 20px; }
+  @media (min-width: 860px) { .galeri { grid-template-columns: 7fr 5fr; grid-template-rows: auto auto; align-items: start; } .galeri figure:nth-child(1) { grid-row: span 2; } .galeri figure:nth-child(3) { margin-left: 18%; } }
+  .galeri figure { margin: 0; overflow: hidden; position: relative; }
+  .galeri img { width: 100%; object-fit: cover; transition: transform 1.6s var(--egri); }
+  .galeri figure:nth-child(1) img { aspect-ratio: 4 / 5; }
+  .galeri figure:nth-child(2) img, .galeri figure:nth-child(3) img { aspect-ratio: 5 / 4; }
+  .galeri figure:hover img { transform: scale(1.06); }
+  .galeri figcaption { margin-top: 14px; font-size: .74rem; letter-spacing: .26em; text-transform: uppercase; color: var(--acik-2); }
+
+  /* ---------- Davet ---------- */
+  .davet { position: relative; min-height: 78svh; display: grid; place-items: center; text-align: center; color: var(--acik); overflow: hidden; }
+  .davet img { position: absolute; inset: -10% 0; width: 100%; height: 120%; object-fit: cover; object-position: center 35%; z-index: -2; will-change: transform; }
+  .davet::after { content: ""; position: absolute; inset: 0; z-index: -1; background: rgb(33 22 15 / .55); }
+  .davet h2 { font-size: clamp(3rem, 8vw, 6.6rem); margin-bottom: 36px; }
+  .davet .btn { color: var(--acik); }
+  .davet .btn:hover { color: var(--toprak); }
 
   /* ---------- İletişim ---------- */
-  .iletisim-ic { display: grid; gap: 40px; }
-  @media (min-width: 900px) { .iletisim-ic { grid-template-columns: 1.1fr 1fr; align-items: start; } }
-  .bilgiler { display: grid; gap: 14px; }
-  .bilgiler div { background: #fff; border-radius: 14px; padding: 18px 22px; }
-  .bilgiler span { display: block; font-size: .82rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--gul); margin-bottom: 2px; }
-  .bilgiler a, .bilgiler p { margin: 0; font-size: 1.2rem; text-decoration: none; }
-  .bilgiler a:hover { color: var(--gul); }
-  .bos { color: var(--metin-2); font-style: italic; font-size: 1rem !important; }
+  .iletisim { padding: clamp(100px, 13vw, 160px) 0; }
+  .iletisim-ic { display: grid; gap: 56px; }
+  @media (min-width: 900px) { .iletisim-ic { grid-template-columns: 1fr 1fr; } }
+  .satirlar { display: grid; gap: 0; border-top: 1px solid var(--gul-2); }
+  .satirlar div { padding: 22px 0; border-bottom: 1px solid var(--gul-2); display: grid; grid-template-columns: 150px 1fr; gap: 16px; align-items: baseline; }
+  .satirlar .ust-yazi { color: var(--metin-2); font-size: .72rem; }
+  .satirlar a, .satirlar p { margin: 0; font-family: var(--serif); font-size: 1.45rem; text-decoration: none; }
+  .satirlar a { background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size .6s var(--egri); }
+  .satirlar a:hover { background-size: 100% 1px; }
+  .bos { font-family: "Jost", sans-serif !important; font-size: 1rem !important; color: var(--metin-2); font-style: italic; }
 
-  footer { background: var(--mor-3); color: #b99bb6; font-size: .85rem; padding: 36px 0 120px; }
-  footer p { margin: 0 0 8px; }
-  footer a { color: #e3cfe0; }
-  @media (min-width: 900px) { footer { padding-bottom: 36px; } }
+  footer { background: var(--toprak); color: var(--acik-2); font-size: .82rem; padding: 48px 0 120px; }
+  footer .logo { display: block; color: var(--acik); font-size: 2rem; margin-bottom: 24px; }
+  footer p { margin: 0 0 6px; }
+  footer a { color: var(--acik); }
+  @media (min-width: 900px) { footer { padding-bottom: 48px; } }
 
-  .alt-cubuk { position: fixed; inset: auto 12px 12px; z-index: 10; display: grid; grid-template-columns: 1.4fr 1fr; gap: 8px; }
-  .alt-cubuk .btn { justify-content: center; box-shadow: 0 10px 30px -8px rgb(0 0 0 / .45); }
-  .alt-cubuk .btn-cizgi { background: var(--mor); }
+  .alt-cubuk { position: fixed; inset: auto 14px 14px; z-index: 30; display: grid; grid-template-columns: 1.5fr 1fr; gap: 8px; }
+  .alt-cubuk .btn { justify-content: center; padding: 0 12px; height: 50px; }
+  .alt-cubuk .btn-koyu { background: var(--toprak); color: var(--acik); border-color: rgb(246 238 234 / .4); }
   @media (min-width: 900px) { .alt-cubuk { display: none; } }
 
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; }
+    .js .belir, .js .perde { opacity: 1; transform: none; clip-path: none; }
     html { scroll-behavior: auto; }
   }
 </style>
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
-<header class="giris">
-  <div class="kap giris-ic">
-    <div>
-      <h1>Celal <em>Eskici</em></h1>
-      <span class="alt-baslik">Kuaför</span>
-      <p>Kesim, fön, boya, gelin saçı. Aynanın karşısına oturun, gerisini bize bırakın. Randevunuzu WhatsApp'tan bir mesajla alın.</p>
-      <div class="eylemler">
-        <a class="btn btn-ampul" href="https://wa.me/905432302533?text=Merhaba%2C%20randevu%20almak%20istiyorum.">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>
-          Randevu al
-        </a>
-        <a class="btn btn-cizgi" href="tel:+905432302533">0543 230 25 33</a>
-      </div>
-    </div>
-    <div class="ayna">
-      <img src="foto/1.jpg" alt="Kuaförde fön çekilen kadın müşteri" fetchpriority="high">
-    </div>
+<header class="gezinme" id="gezinme">
+  <div class="kap">
+    <a class="logo" href="#">Celal Eskici</a>
+    <nav aria-label="Ana menü">
+      <a href="#hizmetler">Hizmetler</a>
+      <a href="#galeri">Galeri</a>
+      <a href="#iletisim">İletişim</a>
+      <a class="btn randevu" href="https://wa.me/905432302533?text=Merhaba%2C%20randevu%20almak%20istiyorum.">Randevu</a>
+    </nav>
   </div>
 </header>
 
+<section class="giris">
+  <div class="giris-yazi">
+    <h1 class="belir">Celal <span>Eskici</span></h1>
+    <span class="ust-yazi belir" style="color:var(--bakir-acik)">Kuaför</span>
+    <p class="belir">Kesim, fön, renk ve özel gün saçları. Aynanın karşısına oturun; gerisi bizde.</p>
+    <div class="belir">
+      <a class="btn btn-dolu" href="https://wa.me/905432302533?text=Merhaba%2C%20randevu%20almak%20istiyorum.">Randevu al <span class="cizgi" aria-hidden="true"></span></a>
+    </div>
+  </div>
+  <div class="giris-foto">
+    <img src="foto/1.jpg" alt="Saçını savuran kadın, sıcak ışıkta" fetchpriority="high">
+  </div>
+  <div class="kaydir" aria-hidden="true"></div>
+</section>
+
 <main>
-  <section aria-labelledby="hizmet-baslik">
+  <section class="soz">
     <div class="kap">
-      <h2 id="hizmet-baslik">Bugün <em>ne yapalım?</em></h2>
-      <p class="giris-metin">Bir hizmete dokunun, WhatsApp'ta randevu mesajınız hazır açılsın.</p>
+      <blockquote class="belir">Saçınız, sizin <em>imzanız</em>.</blockquote>
+      <p class="belir">Yüz hattınıza, yaşam tarzınıza ve aynada görmek istediğiniz kadına göre. Acele yok; önce konuşur, sonra makası elimize alırız.</p>
+    </div>
+  </section>
+
+  <section class="hizmet-bolum" id="hizmetler" aria-labelledby="hizmet-baslik">
+    <div class="kap">
+      <div class="bolum-bas">
+        <h2 id="hizmet-baslik" class="belir">Hizmetler</h2>
+        <p class="belir">Bir hizmete dokunun; WhatsApp'ta randevu mesajınız hazır açılsın.</p>
+      </div>
       <ul class="hizmetler">
-        <li><a href="https://wa.me/905432302533?text=Merhaba%2C%20kesim%20ve%20f%C3%B6n%20i%C3%A7in%20randevu%20almak%20istiyorum."><b>Kesim &amp; fön</b><small>Yüz hattınıza göre kesim, dalgalı ya da düz fön</small><span class="ok">Randevu →</span></a></li>
-        <li><a href="https://wa.me/905432302533?text=Merhaba%2C%20sa%C3%A7%20boyama%20i%C3%A7in%20randevu%20almak%20istiyorum."><b>Saç boyama</b><small>Dip boya, tam boya, renk değişimi</small><span class="ok">Randevu →</span></a></li>
-        <li><a href="https://wa.me/905432302533?text=Merhaba%2C%20r%C3%B6fle%20%2F%20balyaj%20i%C3%A7in%20randevu%20almak%20istiyorum."><b>Röfle &amp; balyaj</b><small>Işıltılı geçişler, doğal tonlar</small><span class="ok">Randevu →</span></a></li>
-        <li><a href="https://wa.me/905432302533?text=Merhaba%2C%20sa%C3%A7%20bak%C4%B1m%C4%B1%20i%C3%A7in%20randevu%20almak%20istiyorum."><b>Saç bakımı</b><small>Yıpranmış saçlar için bakım</small><span class="ok">Randevu →</span></a></li>
-        <li><a href="https://wa.me/905432302533?text=Merhaba%2C%20gelin%20%2F%20ni%C5%9Fan%20sa%C3%A7%C4%B1%20i%C3%A7in%20bilgi%20almak%20istiyorum."><b>Gelin &amp; nişan saçı</b><small>Özel gününüz için topuz ve modeller</small><span class="ok">Bilgi al →</span></a></li>
-        <li><a href="https://wa.me/905432302533?text=Merhaba%2C%20%C3%B6zel%20g%C3%BCn%20sa%C3%A7%C4%B1%20i%C3%A7in%20randevu%20almak%20istiyorum."><b>Özel gün</b><small>Mezuniyet, kına, davet</small><span class="ok">Randevu →</span></a></li>
+        <li class="belir"><a data-foto="foto/1.jpg" href="https://wa.me/905432302533?text=Merhaba%2C%20kesim%20ve%20f%C3%B6n%20i%C3%A7in%20randevu%20almak%20istiyorum."><b>Kesim &amp; fön</b><small>Yüz hattınıza göre kesim, hacimli ya da düz fön</small><span class="ok">Randevu</span></a></li>
+        <li class="belir"><a data-foto="foto/4.jpg" href="https://wa.me/905432302533?text=Merhaba%2C%20sa%C3%A7%20boyama%20i%C3%A7in%20randevu%20almak%20istiyorum."><b>Renk</b><small>Dip boya, tam boya, renk değişimi</small><span class="ok">Randevu</span></a></li>
+        <li class="belir"><a data-foto="foto/2.jpg" href="https://wa.me/905432302533?text=Merhaba%2C%20r%C3%B6fle%20%2F%20balyaj%20i%C3%A7in%20randevu%20almak%20istiyorum."><b>Röfle &amp; balyaj</b><small>Işığı yakalayan geçişler, doğal tonlar</small><span class="ok">Randevu</span></a></li>
+        <li class="belir"><a data-foto="foto/3.jpg" href="https://wa.me/905432302533?text=Merhaba%2C%20sa%C3%A7%20bak%C4%B1m%C4%B1%20i%C3%A7in%20randevu%20almak%20istiyorum."><b>Bakım</b><small>Yıpranmış saçlar için yenileyici bakım</small><span class="ok">Randevu</span></a></li>
+        <li class="belir"><a data-foto="foto/3.jpg" href="https://wa.me/905432302533?text=Merhaba%2C%20gelin%20%2F%20ni%C5%9Fan%20sa%C3%A7%C4%B1%20i%C3%A7in%20bilgi%20almak%20istiyorum."><b>Gelin &amp; nişan</b><small>Prova ile, özel gününüze özel topuz ve modeller</small><span class="ok">Bilgi al</span></a></li>
+        <li class="belir"><a data-foto="foto/2.jpg" href="https://wa.me/905432302533?text=Merhaba%2C%20%C3%B6zel%20g%C3%BCn%20sa%C3%A7%C4%B1%20i%C3%A7in%20randevu%20almak%20istiyorum."><b>Özel gün</b><small>Mezuniyet, kına, davet</small><span class="ok">Randevu</span></a></li>
       </ul>
       <p class="ornek">Örnek hizmet listesi ve örnek fotoğraflardır; kendi hizmetleriniz, fiyatlarınız ve salonunuzun fotoğraflarıyla güncellenir.</p>
     </div>
   </section>
+  <div class="onizleme" id="onizleme" aria-hidden="true"><img alt="" src="foto/1.jpg"></div>
 
-  <section class="galeri-bolum" aria-labelledby="galeri-baslik">
+  <section class="galeri-bolum" id="galeri" aria-labelledby="galeri-baslik">
     <div class="kap">
-      <h2 id="galeri-baslik">Aynadan <em>yansıyanlar</em></h2>
+      <div class="bolum-bas">
+        <h2 id="galeri-baslik" class="belir">Aynadan</h2>
+        <p class="belir">Renk, doku, hareket.</p>
+      </div>
       <div class="galeri">
-        <figure><img src="foto/2.jpg" alt="Kızıl boyalı uzun saç, arkadan" loading="lazy"><figcaption>bakır kızılı</figcaption></figure>
-        <figure><img src="foto/3.jpg" alt="Uzun sarı saç, arkadan" loading="lazy"><figcaption>bal sarısı</figcaption></figure>
-        <figure><img src="foto/4.jpg" alt="Modern kuaför salonu, koltuklar ve aynalar" loading="lazy"><figcaption>salonumuz</figcaption></figure>
+        <figure><img class="perde" src="foto/2.jpg" alt="Topuz yapılmış kızıl saç, arkadan" loading="lazy"><figcaption>Bakır kızılı</figcaption></figure>
+        <figure><img class="perde" src="foto/4.jpg" alt="Koyudan açığa geçen ombre saç" loading="lazy"><figcaption>Ombre</figcaption></figure>
+        <figure><img class="perde" src="foto/3.jpg" alt="Sarı saçta balık sırtı örgü" loading="lazy"><figcaption>Örgü</figcaption></figure>
       </div>
     </div>
   </section>
 
-  <section aria-labelledby="iletisim-baslik">
+  <section class="davet" aria-labelledby="davet-baslik">
+    <img id="paralaks" src="foto/1.jpg" alt="" loading="lazy">
+    <div class="kap">
+      <h2 id="davet-baslik" class="belir">Koltuğunuz hazır.</h2>
+      <div class="belir"><a class="btn" href="https://wa.me/905432302533?text=Merhaba%2C%20randevu%20almak%20istiyorum.">WhatsApp'tan randevu <span class="cizgi" aria-hidden="true"></span></a></div>
+    </div>
+  </section>
+
+  <section class="iletisim" id="iletisim" aria-labelledby="iletisim-baslik">
     <div class="kap iletisim-ic">
       <div>
-        <h2 id="iletisim-baslik">Koltuğunuz <em>hazır</em></h2>
-        <p class="giris-metin" style="margin-bottom:28px">Gelmeden önce yazın; sıra beklemeden oturun.</p>
-        <div class="eylemler">
-          <a class="btn btn-ampul" href="https://wa.me/905432302533?text=Merhaba%2C%20randevu%20almak%20istiyorum.">WhatsApp'tan randevu</a>
-        </div>
+        <h2 id="iletisim-baslik" class="belir">İletişim</h2>
+        <p class="belir" style="color:var(--metin-2);max-width:34ch;margin:20px 0 0">Gelmeden önce yazın; sıra beklemeden oturun.</p>
       </div>
-      <div class="bilgiler">
-        <div><span>Telefon</span><a href="tel:+905432302533">0543 230 25 33</a></div>
-        <div><span>Adres</span><p class="bos">Adresiniz buraya eklenecek · <a href="https://www.google.com/maps/search/?api=1&amp;query=Celal%20Eskici%20Kuaf%C3%B6r" target="_blank" rel="noopener" style="font-style:normal;font-size:1rem">haritada ara</a></p></div>
-        <div><span>Çalışma saatleri</span><p class="bos">Saatleriniz buraya eklenecek</p></div>
+      <div class="satirlar belir">
+        <div><span class="ust-yazi">Telefon</span><a href="tel:+905432302533">0543 230 25 33</a></div>
+        <div><span class="ust-yazi">WhatsApp</span><a href="https://wa.me/905432302533?text=Merhaba%2C%20randevu%20almak%20istiyorum.">Mesaj gönderin</a></div>
+        <div><span class="ust-yazi">Adres</span><p class="bos">Adresiniz buraya eklenecek · <a href="https://www.google.com/maps/search/?api=1&amp;query=Celal%20Eskici%20Kuaf%C3%B6r" target="_blank" rel="noopener">haritada ara</a></p></div>
+        <div><span class="ust-yazi">Saatler</span><p class="bos">Çalışma saatleriniz buraya eklenecek</p></div>
       </div>
     </div>
   </section>
@@ -274,20 +291,61 @@
 
 <footer>
   <div class="kap">
+    <span class="logo">Celal Eskici</span>
     <p>Bu sayfa Celal Eskici Kuaför için hazırlanmış bir tasarım önizlemesidir.</p>
     <p>Hazırlayan: Evren Arif Kaya · Evolveatech · 0553 708 67 54</p>
-    <p>Örnek fotoğraflar Wikimedia Commons'tan:
-      <a href="https://commons.wikimedia.org/wiki/File:Drying_hair_in_salon.jpg">bradleypjohnson</a> (CC BY 2.0),
-      <a href="https://commons.wikimedia.org/wiki/File:Young_woman_with_long_red_hair_from_behind.jpg">Alex Neman</a> (CC BY-SA 4.0),
-      <a href="https://commons.wikimedia.org/wiki/File:Woman_with_long_blond_hair.jpg">wht_wolf9653</a> (CC BY-SA 2.0),
-      <a href="https://commons.wikimedia.org/wiki/File:Beauty_salon_20211024_171434.jpg">Ka23 13</a> (CC BY-SA 4.0).</p>
+    <p>Örnek fotoğraflar (CC0, Unsplash / Wikimedia Commons):
+      <a href="https://commons.wikimedia.org/wiki/File:Hair_Flip_(Unsplash).jpg">Allef Vinicius</a>,
+      <a href="https://commons.wikimedia.org/wiki/File:Woman_red_hair_looking_at_sky_(Unsplash).jpg">Tyler McRobert</a>,
+      <a href="https://commons.wikimedia.org/wiki/File:Braided_Hair_(Unsplash).jpg">Pete Bellis</a>,
+      <a href="https://commons.wikimedia.org/wiki/File:Ombre_Hair_(Unsplash).jpg">Priscilla Du Preez</a>.</p>
   </div>
 </footer>
 
 <nav class="alt-cubuk" aria-label="Hızlı iletişim">
-  <a class="btn btn-ampul" href="https://wa.me/905432302533?text=Merhaba%2C%20randevu%20almak%20istiyorum.">Randevu al</a>
-  <a class="btn btn-cizgi" href="tel:+905432302533">Ara</a>
+  <a class="btn btn-dolu" href="https://wa.me/905432302533?text=Merhaba%2C%20randevu%20almak%20istiyorum.">Randevu al</a>
+  <a class="btn btn-koyu" href="tel:+905432302533">Ara</a>
 </nav>
 
+<script>
+  // Kaydırınca belirme
+  const io = new IntersectionObserver((girdiler) => {
+    for (const g of girdiler) if (g.isIntersecting) { g.target.classList.add('gorundu'); io.unobserve(g.target); }
+  }, { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.belir, .perde').forEach((el) => io.observe(el));
+  addEventListener('load', () => document.body.classList.add('yuklendi'));
+  requestAnimationFrame(() => document.body.classList.add('yuklendi'));
+
+  // Gezinme: kaydırınca zemin
+  const gez = document.getElementById('gezinme');
+  const davet = document.getElementById('paralaks');
+  const azHareket = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  addEventListener('scroll', () => {
+    gez.classList.toggle('dolu', scrollY > innerHeight * 0.75);
+    if (!azHareket && davet) {
+      const r = davet.parentElement.getBoundingClientRect();
+      davet.style.transform = `translateY(${(r.top / innerHeight) * -60}px)`;
+    }
+  }, { passive: true });
+
+  // Hizmet satırında fareyi izleyen fotoğraf önizlemesi
+  const on = document.getElementById('onizleme');
+  const onImg = on.querySelector('img');
+  let x = 0, y = 0, hx = 0, hy = 0, calisiyor = false;
+  function izle() {
+    hx += (x - hx) * 0.14; hy += (y - hy) * 0.14;
+    on.style.left = hx + 'px'; on.style.top = hy + 'px';
+    if (calisiyor) requestAnimationFrame(izle);
+  }
+  document.querySelectorAll('.hizmetler a').forEach((a) => {
+    a.addEventListener('mouseenter', (e) => {
+      onImg.src = a.dataset.foto; x = hx = e.clientX + 160; y = hy = e.clientY;
+      on.classList.add('acik');
+      if (!calisiyor) { calisiyor = true; izle(); }
+    });
+    a.addEventListener('mousemove', (e) => { x = e.clientX + 160; y = e.clientY; });
+    a.addEventListener('mouseleave', () => { on.classList.remove('acik'); calisiyor = false; });
+  });
+</script>
 </body>
 </html>
